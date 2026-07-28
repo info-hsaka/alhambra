@@ -1,0 +1,16 @@
+4 Farben, Kartenwerte 1-9, Anzahl 3 von jedem Kartenwert
+
+
+let geldstapel = []
+let karte = {farbe: "blau", zahl: 1}
+      let geldzahlen = [1,2,3,4,5,6,7,8,9]
+      let geldfarben = ["blau", "gelb", "grün", "orange"]
+      for (let x = 0; x < 3; x++) {
+        for (const zahl of geldzahlen) {
+          karte["zahl"] = zahl
+        for (const farbe of geldfarben) {
+          karte["farbe"] = farbe
+        geldstapel.push(karte)
+      }
+      }
+      }
