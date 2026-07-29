@@ -7,41 +7,72 @@ export const Game = {
     let score = [0, 0, 0, 0]
     let geldstapel = []
     // Geldstapel wird befüllt
-      let geldzahlen = [1,2,3,4,5,6,7,8,9]
-      let geldfarben = ["blau", "gelb", "grün", "orange"]
-      for (let x = 0; x < 3; x++) {
-        for (const zahl of geldzahlen) {
-          for (const farbe of geldfarben) {
-           let neueKarte = {farbe: farbe, zahl: zahl}
-           geldstapel.push(neueKarte)
+    let geldzahlen = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+    let geldfarben = ["blau", "gelb", "grün", "orange"]
+    for (let x = 0; x < 3; x++) {
+      for (const zahl of geldzahlen) {
+        for (const farbe of geldfarben) {
+          let neueKarte = { farbe: farbe, zahl: zahl }
+          geldstapel.push(neueKarte)
+        }
       }
-      }
-      }
-      // Geldstapel wird befüllt, fertig
+    }
+    geldstapel = random.Shuffle(geldstapel)
 
-      let hausstapel = []
-      // hausstapel füllen
-      let hausfarben = ["blau", "rot", "braun", "weiß", "gruen", "lila"]
+    let geldstapel1 = geldstapel.slice(0, 22)
+    let geldstapel2 = geldstapel.slice(22, 44)
+    let geldstapel3 = geldstapel.slice(44, 66)
+    let geldstapel4 = geldstapel.slice(66, 87)
+    let geldstapel5 = geldstapel.slice(87, 108)
 
-       for (let i = 0; i < 7; i++) {
-       let x = 8
-       for (const hausfarbe of hausfarben) {
-       let neueHauskarte = {farbe: hausfarbe, zahl: x }
-       x= x+1
-       hausstapel.push(neueHauskarte)
+    let Wertungskarte1 = "Wertungskarte1"
+    let Wertungskarte2 = "Wertungskarte2"
 
 
-      }
-      }
-      for (let index = 0; index < 2; index++) {
-        hausstapel.push({farbe: "braun", zahl: 10 },{farbe: "weiß", zahl: 11 })
+    geldstapel2.push(Wertungskarte1)
+    geldstapel4.push(Wertungskarte2)
 
-      }
-     for (let index = 0; index < 4; index++) {
-        hausstapel.push({farbe: "gruen", zahl: 12 },{farbe: "lila", zahl: 13 })
+    geldstapel2 = random.Shuffle(geldstapel2)
+    geldstapel4 = random.Shuffle(geldstapel4)
 
+    geldstapel = geldstapel1
+    for (let i = 0; i < 23; i++) {
+      geldstapel.push(geldstapel2[i])
+    }
+    for (let i = 0; i < 22; i++) {
+      geldstapel.push(geldstapel3[i])
+    }
+    for (let i = 0; i < 22; i++) {
+      geldstapel.push(geldstapel4[i])
+    }
+    for (let i = 0; i < 21; i++) {
+      geldstapel.push(geldstapel5[i])
+    }
+
+
+    // Geldstapel wird befüllt, fertig
+
+    let hausstapel = []
+    // hausstapel füllen
+    let hausfarben = ["blau", "rot", "braun", "weiß", "gruen", "lila"]
+
+    for (let i = 0; i < 7; i++) {
+      let x = 8
+      for (const hausfarbe of hausfarben) {
+        let neueHauskarte = { farbe: hausfarbe, zahl: x }
+        x = x + 1
+        hausstapel.push(neueHauskarte)
       }
-      //hausstapel füllen, fertig
+    }
+    for (let index = 0; index < 2; index++) {
+      hausstapel.push({ farbe: "braun", zahl: 10 }, { farbe: "weiß", zahl: 11 })
+    }
+    for (let index = 0; index < 4; index++) {
+      hausstapel.push({ farbe: "gruen", zahl: 12 }, { farbe: "lila", zahl: 13 })
+    }
+    hausstapel = random.Shuffle(hausstapel)
+
+    //hausstapel füllen, fertig
     return { score: score, geldstapel: geldstapel, hausstapel: hausstapel }
   },
 
@@ -70,4 +101,3 @@ export const Game = {
 
   endIf: ({ G, ctx, random }) => {},
 }
-
