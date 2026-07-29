@@ -1,8 +1,14 @@
-export function draw(state) {
+/** @import { ClientState } from "boardgame.io/src/client/client" */
+/** @import { Game } from "./Game" */
+
+export function draw(
+  /** @type {ClientState<[ReturnType<Game["setup"]>]>} */
+  state,
+  /** @type{Record<string, (...args: any[]) => void>} */
+  moves,
+) {
   const canvas = document.getElementById("canvas")
   const ctx = canvas.getContext("2d")
-
-  // draw here
   console.log(canvas.width)
   console.log(canvas.height)
   ctx.fillStyle = "rgb(194, 114, 22)"
@@ -18,4 +24,5 @@ export function draw(state) {
   ctx.fillRect(682.5, 450, 135, 135)
   ctx.fillStyle = "rgb(255, 115, 0)"
   ctx.fillRect(962.5, 450, 135, 135)
+
 }
