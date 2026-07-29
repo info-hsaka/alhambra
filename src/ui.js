@@ -1,9 +1,21 @@
-
 export function draw(state) {
-	const canvas = document.getElementById("canvas");
-	const ctx = canvas.getContext("2d");
+  const canvas = document.getElementById("canvas")
+  const ctx = canvas.getContext("2d")
 
-	// draw here
-	ctx.fillStyle = "rgb(201, 112, 49)"
-	ctx.fillRect(100, 100, 180, 270)
+  // draw here
+  console.log(canvas.width)
+  console.log(canvas.height)
+  ctx.fillStyle = "rgb(194, 114, 22)"
+  ctx.fillRect(100, 100, 180, 270)
+  ctx.fillRect(380, 100, 180, 270)
+  ctx.fillRect(660, 100, 180, 270)
+  ctx.fillRect(940, 100, 180, 270)
+  ctx.fillStyle = "rgb(255, 255, 0)"
+  ctx.fillRect(122.5, 450, 135, 135)
+  ctx.fillStyle = "rgb(0, 255, 0)"
+  ctx.fillRect(402.5, 450, 135, 135)
+  ctx.fillStyle = "rgb(0, 0, 255)"
+  ctx.fillRect(682.5, 450, 135, 135)
+  ctx.fillStyle = "rgb(255, 115, 0)"
+  ctx.fillRect(962.5, 450, 135, 135)
 }

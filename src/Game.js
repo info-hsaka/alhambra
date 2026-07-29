@@ -18,37 +18,40 @@ export const Game = {
       }
     }
     geldstapel = random.Shuffle(geldstapel)
+    let spielerhände = []
+    for (let index = 0; index < 2; index++) {
+      let hand = []
+      spielerhände.push(hand) //Karten in hand geben, in spielerhände zwei leere arrays (jetzt)
+    }
+    // geldstapel aufteilen
+    let geldstapel1 = []
+    let geldstapel2 = []
+    let geldstapel3 = []
+    let geldstapel4 = []
+    let geldstapel5 = []
+    let geldhaufen = [
+      geldstapel1,
+      geldstapel2,
+      geldstapel3,
+      geldstapel4,
+      geldstapel5,
+    ]
 
-    let geldstapel1 = geldstapel.slice(0, 22)
-    let geldstapel2 = geldstapel.slice(22, 44)
-    let geldstapel3 = geldstapel.slice(44, 66)
-    let geldstapel4 = geldstapel.slice(66, 87)
-    let geldstapel5 = geldstapel.slice(87, 108)
+    let x = 0
+    while (geldstapel.length != 0) {
+      geldhaufen[x].push(geldstapel.pop())
+      x = x + 1
+      x = x % geldhaufen.length
+    }
 
     let Wertungskarte1 = "Wertungskarte1"
     let Wertungskarte2 = "Wertungskarte2"
-
-
     geldstapel2.push(Wertungskarte1)
     geldstapel4.push(Wertungskarte2)
 
     geldstapel2 = random.Shuffle(geldstapel2)
     geldstapel4 = random.Shuffle(geldstapel4)
-
-    geldstapel = geldstapel1
-    for (let i = 0; i < 23; i++) {
-      geldstapel.push(geldstapel2[i])
-    }
-    for (let i = 0; i < 22; i++) {
-      geldstapel.push(geldstapel3[i])
-    }
-    for (let i = 0; i < 22; i++) {
-      geldstapel.push(geldstapel4[i])
-    }
-    for (let i = 0; i < 21; i++) {
-      geldstapel.push(geldstapel5[i])
-    }
-
+    // geldstapel aufteilen ferig
 
     // Geldstapel wird befüllt, fertig
 
