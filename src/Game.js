@@ -31,13 +31,23 @@ export const Game = {
       spielerhände[1].push(geldstapel.pop()) // Karte ziehen
       let zahlen = spielerhände[1].length // 1
       let summeZahlen = 0
-      while (zahlen != 0) {
-        summeZahlen = summeZahlen + spielerhände[1][zahlen - 1].zahl
-        zahlen = zahlen - 1
+      for (const element of spielerhände[1]) {
+        summeZahlen = element.zahl + summeZahlen
+      }
+      if (summeZahlen >= 20) {
+        break
       }
     }
     while (true) {
       spielerhände[0].push(geldstapel.pop())
+      let zahlen = spielerhände[0].length // 1
+      let summeZahlen = 0
+      for (const element of spielerhände[0]) {
+        summeZahlen = element.zahl + summeZahlen
+      }
+      if (summeZahlen >= 20) {
+        break
+      }
     }
     // geldstapel aufteilen
     let geldstapel1 = []
@@ -92,7 +102,12 @@ export const Game = {
     hausstapel = random.Shuffle(hausstapel)
 
     //hausstapel füllen, fertig
-    return { score: score, geldstapel: geldstapel, hausstapel: hausstapel }
+    return {
+      score: score,
+      geldstapel: geldstapel,
+      hausstapel: hausstapel,
+      spielerhände: spielerhände,
+    }
   },
 
   moves: {
