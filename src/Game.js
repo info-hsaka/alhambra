@@ -138,9 +138,12 @@ export const Game = {
 
     onBegin: ({ G, ctx, events, random }) => {
       //geldmarkt befüllen
-      if (G.geldmarkt[0].length == 0) {
-        G.geldmarkt[0].push(G.geldstapel.pop())
+      for (let i = 0; i < 4; i++) {
+        if (G.geldmarkt[i].length == 0) {
+          G.geldmarkt[i].push(G.geldstapel.pop())
+        }
       }
+      for
     },
     onEnd: ({ G, ctx, events, random }) => {},
 
