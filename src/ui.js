@@ -34,8 +34,8 @@ export function draw(
     ctx.font = "100px Arial"
     ctx.textAlign = "center"
     ctx.textBaseline = "middle"
-    ctx.fillText("${zahl}", 190, 225)
+    ctx.fillText(zahl, 190, 225)
   }
-  console.log(state)
-  geldzeichnen(state.geldstapel[0].farbe, state.geldstapel[0].zahl)
+  console.log(state.G.geldmarkt)
+  geldzeichnen(state.G.geldmarkt[0].farbe, state.G.geldmarkt[0].zahl)
 }
