@@ -18,11 +18,16 @@ export const Game = {
       }
     }
     geldstapel = random.Shuffle(geldstapel)
+
+    // Spielerhände
     let spielerhände = []
     for (let index = 0; index < 2; index++) {
       let hand = []
       spielerhände.push(hand) //Karten in hand geben, in spielerhände zwei leere arrays (jetzt)
     }
+    // farbe: zahl.
+    while()
+
     // geldstapel aufteilen
     let geldstapel1 = []
     let geldstapel2 = []
