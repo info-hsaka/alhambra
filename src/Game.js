@@ -25,9 +25,15 @@ export const Game = {
       let hand = []
       spielerhände.push(hand) //Karten in hand geben, in spielerhände zwei leere arrays (jetzt)
     }
-    // farbe: zahl.
-    while()
-
+    // {farbe: zahl:}
+    while (true) {
+      spielerhände[1].push(geldstapel.pop()) // Karte ziehen
+      let zahlen = spielerhände[1].length
+      let summeZahlen = 0
+    }
+    while (true) {
+      spielerhände[0].push(geldstapel.pop())
+    }
     // geldstapel aufteilen
     let geldstapel1 = []
     let geldstapel2 = []
