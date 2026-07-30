@@ -30,7 +30,7 @@ export function draw(
   ctx.fillStyle = "rgb(255, 255, 0)"
   ctx.fillRect(100, 100, 180, 270)
   ctx.fillStyle = "black"
-  ctx.font = "50px Arial"
+  ctx.font = "100px Arial"
   ctx.textAlign = "center"
   ctx.textBaseline = "middle"
   ctx.fillText("6", 190, 225)
