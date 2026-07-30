@@ -136,6 +136,7 @@ export const Game = {
     order: TurnOrder.DEFAULT,
 
     onBegin: ({ G, ctx, events, random }) => {
+      //geldmarkt befüllen
       if (geldmarkt[0].length == 0) {
         geldmarkt[0].push(geldstapel.pop())
       }
