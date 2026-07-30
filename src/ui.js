@@ -17,13 +17,13 @@ export function draw(
   ctx.fillRect(380, 100, 180, 270)
   ctx.fillRect(660, 100, 180, 270)
   ctx.fillRect(940, 100, 180, 270)
-  ctx.fillStyle = "rgb(255, 255, 0)"
+  ctx.fillStyle = "yellow"
   ctx.fillRect(122.5, 450, 135, 135)
-  ctx.fillStyle = "rgb(0, 255, 0)"
+  ctx.fillStyle = "green"
   ctx.fillRect(402.5, 450, 135, 135)
-  ctx.fillStyle = "rgb(0, 0, 255)"
+  ctx.fillStyle = "blue"
   ctx.fillRect(682.5, 450, 135, 135)
-  ctx.fillStyle = "rgb(255, 115, 0)"
+  ctx.fillStyle = "orange"
   ctx.fillRect(962.5, 450, 135, 135)
 
   //Geldkarten zeichnen

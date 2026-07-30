@@ -8,7 +8,7 @@ export const Game = {
     let geldstapel = []
     // Geldstapel wird befüllt
     let geldzahlen = [1, 2, 3, 4, 5, 6, 7, 8, 9]
-    let geldfarben = ["blau", "gelb", "grün", "orange"]
+    let geldfarben = ["blue", "yellow", "green", "orange"]
     for (let x = 0; x < 3; x++) {
       for (const zahl of geldzahlen) {
         for (const farbe of geldfarben) {
@@ -95,7 +95,7 @@ export const Game = {
 
     let hausstapel = []
     // hausstapel füllen
-    let hausfarben = ["blau", "rot", "braun", "weiß", "gruen", "lila"]
+    let hausfarben = ["blue", "red", "brown", "white", "green", "purple"]
 
     for (let i = 0; i < 7; i++) {
       let x = 8
