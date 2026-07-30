@@ -27,15 +27,38 @@ export function draw(
   ctx.fillRect(962.5, 450, 135, 135)
 
   //Geldkarten zeichnen
-  function geldzeichnen(farbe, zahl) {
+  function geldzeichnen(farbe, zahl, x, y) {
     ctx.fillStyle = farbe
-    ctx.fillRect(100, 100, 180, 270)
+    ctx.fillRect(x, y, 180, 270)
     ctx.fillStyle = "black"
     ctx.font = "100px Arial"
     ctx.textAlign = "center"
     ctx.textBaseline = "middle"
-    ctx.fillText(zahl, 190, 225)
+    ctx.fillText(zahl, x + 90, 225)
   }
   console.log(state.G.geldmarkt)
-  geldzeichnen(state.G.geldmarkt[0].farbe, state.G.geldmarkt[0].zahl)
+  geldzeichnen(
+    state.G.geldmarkt[0][0].farbe,
+    state.G.geldmarkt[0][0].zahl,
+    100,
+    100,
+  )
+  geldzeichnen(
+    state.G.geldmarkt[1][0].farbe,
+    state.G.geldmarkt[1][0].zahl,
+    380,
+    100,
+  )
+  geldzeichnen(
+    state.G.geldmarkt[2][0].farbe,
+    state.G.geldmarkt[2][0].zahl,
+    660,
+    100,
+  )
+  geldzeichnen(
+    state.G.geldmarkt[3][0].farbe,
+    state.G.geldmarkt[3][0].zahl,
+    940,
+    100,
+  )
 }
