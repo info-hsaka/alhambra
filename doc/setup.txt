@@ -14,3 +14,8 @@ let karte = {farbe: "blau", zahl: 1}
       }
       }
       }
+
+while (zahlen != 0) {
+        summeZahlen = summeZahlen + spielerhände[1][zahlen - 1].zahl
+        zahlen = zahlen - 1
+      }
