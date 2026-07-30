@@ -80,9 +80,16 @@ export const Game = {
     geldstapel2 = random.Shuffle(geldstapel2)
     geldstapel4 = random.Shuffle(geldstapel4)
     // geldstapel aufteilen ferig
-    while (geldhaufen.geldstapel5.length != 0) {
-      geldstapel.push(geldstapel5.pop())
+    function geldstapelStapeln(x) {
+      while (geldhaufen.x.length != 0) {
+        geldstapel.push(x.pop())
+      }
     }
+    geldstapelStapeln(geldstapel5)
+    geldstapelStapeln(geldstapel4)
+    geldstapelStapeln(geldstapel3)
+    geldstapelStapeln(geldstapel2)
+    geldstapelStapeln(geldstapel1)
 
     // Geldstapel wird befüllt, fertig
 
