@@ -27,11 +27,14 @@ export function draw(
   ctx.fillRect(962.5, 450, 135, 135)
 
   //Geldkarten zeichnen
-  ctx.fillStyle = "rgb(255, 255, 0)"
-  ctx.fillRect(100, 100, 180, 270)
-  ctx.fillStyle = "black"
-  ctx.font = "100px Arial"
-  ctx.textAlign = "center"
-  ctx.textBaseline = "middle"
-  ctx.fillText("6", 190, 225)
+  function geldzeichnen(farbe, zahl) {
+    ctx.fillStyle = farbe
+    ctx.fillRect(100, 100, 180, 270)
+    ctx.fillStyle = "black"
+    ctx.font = "100px Arial"
+    ctx.textAlign = "center"
+    ctx.textBaseline = "middle"
+    ctx.fillText(zahl, 190, 225)
+  }
+  geldzeichnen("rgb(255, 255, 0)", "1")
 }
