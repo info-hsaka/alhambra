@@ -25,4 +25,11 @@ export function draw(
   ctx.fillRect(682.5, 450, 135, 135)
   ctx.fillStyle = "rgb(255, 115, 0)"
   ctx.fillRect(962.5, 450, 135, 135)
+
+  //Geldkarten zeichnen
+  ctx.fillStyle = "rgb(255, 255, 0)"
+  ctx.fillRect(100, 100, 180, 270)
+  ctx.fillStyle = "black"
+  ctx.font = "50px Arial"
+  ctx.fillText("6", 100, 100)
 }
