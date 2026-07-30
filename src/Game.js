@@ -116,12 +116,14 @@ export const Game = {
     //hausstapel füllen, fertig
 
     let geldmarkt = [[], [], [], []]
+    let hausmarkt = [[], [], [], []]
     return {
       score: score,
       geldstapel: geldstapel,
       hausstapel: hausstapel,
       spielerhände: spielerhände,
       geldmarkt: geldmarkt,
+      hausmarkt: hausmarkt,
     }
   },
 
@@ -143,7 +145,11 @@ export const Game = {
           G.geldmarkt[i].push(G.geldstapel.pop())
         }
       }
-      for
+      for (let i = 0; i < 4; i++) {
+        if (G.hausmarkt[i].length == 0) {
+          G.hausmarkt[i].push(G.hausstapel.pop())
+        }
+      }
     },
     onEnd: ({ G, ctx, events, random }) => {},
 

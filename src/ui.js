@@ -9,6 +9,7 @@ export function draw(
 ) {
   const canvas = document.getElementById("canvas")
   const ctx = canvas.getContext("2d")
+  //Geldmarkt + hausmarkt leer
   console.log(canvas.width)
   console.log(canvas.height)
   ctx.fillStyle = "rgb(194, 114, 22)"
@@ -24,5 +25,4 @@ export function draw(
   ctx.fillRect(682.5, 450, 135, 135)
   ctx.fillStyle = "rgb(255, 115, 0)"
   ctx.fillRect(962.5, 450, 135, 135)
-
 }
