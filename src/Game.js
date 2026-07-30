@@ -27,6 +27,7 @@ export const Game = {
     }
     // {farbe: zahl:}
     // [[],[{farbe:blau, Zahl: 3},{}]]
+    // karten aufteilen
     while (true) {
       spielerhände[1].push(geldstapel.pop()) // Karte ziehen
       let zahlen = spielerhände[1].length // 1
@@ -49,6 +50,7 @@ export const Game = {
         break
       }
     }
+    // karten aufteilen fertig
     // geldstapel aufteilen
     let geldstapel1 = []
     let geldstapel2 = []
@@ -78,6 +80,9 @@ export const Game = {
     geldstapel2 = random.Shuffle(geldstapel2)
     geldstapel4 = random.Shuffle(geldstapel4)
     // geldstapel aufteilen ferig
+    while (geldhaufen.geldstapel5.length != 0) {
+      geldstapel.push(geldstapel5.pop())
+    }
 
     // Geldstapel wird befüllt, fertig
 
@@ -102,6 +107,8 @@ export const Game = {
     hausstapel = random.Shuffle(hausstapel)
 
     //hausstapel füllen, fertig
+
+    let geldmarkt = [[], [], [], []]
     return {
       score: score,
       geldstapel: geldstapel,
@@ -121,7 +128,11 @@ export const Game = {
   turn: {
     order: TurnOrder.DEFAULT,
 
-    onBegin: ({ G, ctx, events, random }) => {},
+    onBegin: ({ G, ctx, events, random }) => {
+      if (geldmarkt[0].length == 0) {
+        geldmarkt[0].push(geldstapel.pop())
+      }
+    },
     onEnd: ({ G, ctx, events, random }) => {},
 
     minMoves: 1,
