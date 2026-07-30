@@ -81,7 +81,7 @@ export const Game = {
     geldstapel4 = random.Shuffle(geldstapel4)
     // geldstapel aufteilen ferig
     function geldstapelStapeln(x) {
-      while (geldhaufen.x.length != 0) {
+      while (x.length != 0) {
         geldstapel.push(x.pop())
       }
     }
@@ -121,6 +121,7 @@ export const Game = {
       geldstapel: geldstapel,
       hausstapel: hausstapel,
       spielerhände: spielerhände,
+      geldmarkt: geldmarkt,
     }
   },
 
@@ -137,8 +138,8 @@ export const Game = {
 
     onBegin: ({ G, ctx, events, random }) => {
       //geldmarkt befüllen
-      if (geldmarkt[0].length == 0) {
-        geldmarkt[0].push(geldstapel.pop())
+      if (G.geldmarkt[0].length == 0) {
+        G.geldmarkt[0].push(G.geldstapel.pop())
       }
     },
     onEnd: ({ G, ctx, events, random }) => {},
