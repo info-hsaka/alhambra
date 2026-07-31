@@ -107,10 +107,16 @@ export const Game = {
       }
     }
     for (let index = 0; index < 2; index++) {
-      hausstapel.push({ farbe: "braun", zahl: 10 }, { farbe: "weiß", zahl: 11 })
+      hausstapel.push(
+        { farbe: "brown", zahl: 10 },
+        { farbe: "white", zahl: 11 },
+      )
     }
     for (let index = 0; index < 4; index++) {
-      hausstapel.push({ farbe: "gruen", zahl: 12 }, { farbe: "lila", zahl: 13 })
+      hausstapel.push(
+        { farbe: "green", zahl: 12 },
+        { farbe: "purple", zahl: 13 },
+      )
     }
     hausstapel = random.Shuffle(hausstapel)
 
