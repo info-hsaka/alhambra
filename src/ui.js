@@ -87,7 +87,7 @@ export function draw(
   //Hauskarten
   function hauszeichnen(farbe, zahl, x, y) {
     ctx.fillStyle = farbe
-    ctx.fillRect(x, y, 180, 270)
+    ctx.fillRect(x, y, 150, 150)
     ctx.fillStyle = "black"
     ctx.font = "120px oldstandard"
     ctx.textAlign = "center"
@@ -98,25 +98,25 @@ export function draw(
   hauszeichnen(
     state.G.hausmarkt[0][0].farbe,
     state.G.hausmarkt[0][0].zahl,
-    100,
-    100,
+    110,
+    560,
   )
   hauszeichnen(
     state.G.hausmarkt[1][0].farbe,
     state.G.hausmarkt[1][0].zahl,
-    380,
-    100,
+    390,
+    560,
   )
   hauszeichnen(
     state.G.hausmarkt[2][0].farbe,
     state.G.hausmarkt[2][0].zahl,
-    660,
-    100,
+    670,
+    560,
   )
   hauszeichnen(
     state.G.hausmarkt[3][0].farbe,
     state.G.hausmarkt[3][0].zahl,
-    940,
-    100,
+    950,
+    560,
   )
 }
