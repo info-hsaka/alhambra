@@ -144,17 +144,18 @@ export function draw(
     ctx.font = "120px oldstandard"
     ctx.textAlign = "center"
     ctx.textBaseline = "middle"
-    ctx.fillText(zahl, x + 90, 225)
+    ctx.fillText(zahl, x + 60, y + 90)
   }
   let x = 0
   for (let i = 0; i < state.G.spielerhände[1].length; i++) {
     handkartenzeichnen(
       state.G.spielerhände[1][i].farbe,
       state.G.spielerhände[1][i].zahl,
-      380,
+      100 + x,
       800,
       1,
     )
+    x = x + 150
   }
   /*for (let i = 0; i < state.G.spielerhände[0].length; i++) {
     handkartenzeichnen(
