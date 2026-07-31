@@ -139,14 +139,15 @@ export function draw(
   //Handkarten zeichnen
   function handkartenzeichnen(farbe, zahl, x, y, z) {
     ctx.fillStyle = farbe
-    ctx.fillRect(x, y, 120, 140)
+    ctx.fillRect(x, y, 120, 180)
     ctx.fillStyle = "black"
     ctx.font = "120px oldstandard"
     ctx.textAlign = "center"
     ctx.textBaseline = "middle"
     ctx.fillText(zahl, x + 90, 225)
   }
-  for (let i = 0; i < spielerhände[1].length; i++) {
+  let x = 0
+  for (let i = 0; i < state.G.spielerhände[1].length; i++) {
     handkartenzeichnen(
       state.G.spielerhände[1][i].farbe,
       state.G.spielerhände[1][i].zahl,
@@ -155,13 +156,13 @@ export function draw(
       1,
     )
   }
-  for (let i = 0; i < spielerhände[0].length; i++) {
+  /*for (let i = 0; i < state.G.spielerhände[0].length; i++) {
     handkartenzeichnen(
       state.G.spielerhände[0][i].farbe,
       state.G.spielerhände[0][i].zahl,
       380,
-      100,
-      1,
+      800,
+      0,
     )
-  }
+  }*/
 }
