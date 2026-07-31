@@ -135,7 +135,7 @@ export const Game = {
       console.log(G.geldmarkt)
     },
     clickHaus: ({ G, ctx, playerID, events, random }, z) => {
-      G.hausmarkt[z][0].pop()
+      G.hausmarkt[z].pop()
     },
     drawCard(ctx) {},
   },
