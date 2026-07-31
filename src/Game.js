@@ -56,9 +56,9 @@ export const Game = {
     }
     // spielerreihenfolge
     if (spielerhände[0].length < spielerhände[1].length) {
-      spielerReihenfolge = [[0], [1]]
+      spielerReihenfolge = [0, 1]
     } else {
-      spielerReihenfolge = [[1], [0]]
+      spielerReihenfolge = [1, 0]
     }
     console.log(spielerReihenfolge)
     // karten aufteilen fertig
@@ -141,6 +141,7 @@ export const Game = {
       spielerhände: spielerhände,
       geldmarkt: geldmarkt,
       hausmarkt: hausmarkt,
+      spielerReihenfolge: spielerReihenfolge,
     }
   },
 
@@ -159,7 +160,7 @@ export const Game = {
   seed: "random-seed",
 
   turn: {
-    order: TurnOrder.DEFAULT,
+    order: TurnOrder.CUSTOM_FROM("spielerReihenfolge"),
 
     onBegin: ({ G, ctx, events, random }) => {
       //geldmarkt befüllen
