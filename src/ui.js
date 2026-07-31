@@ -18,7 +18,7 @@ export function draw(
   ctx.fillRect(660, 100, 180, 270)
   ctx.fillRect(940, 100, 180, 270)
   ctx.fillStyle = "yellow"
-  ctx.fillRect(122.5, 450, 135, 135)
+  ctx.fillRect(122.5, 450, 100, 100)
   ctx.fillStyle = "green"
   ctx.fillRect(402.5, 450, 135, 135)
   ctx.fillStyle = "blue"
@@ -61,4 +61,6 @@ export function draw(
     940,
     100,
   )
+
+  //Hauskarten zeichnen
 }
