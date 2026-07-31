@@ -1,5 +1,6 @@
 /** @import { ClientState } from "boardgame.io/src/client/client" */
 /** @import { Game } from "./Game" */
+import { onClick } from "./canvas"
 
 export function draw(
   /** @type {ClientState<[ReturnType<Game["setup"]>]>} */
@@ -37,6 +38,7 @@ export function draw(
     ctx.textAlign = "center"
     ctx.textBaseline = "middle"
     ctx.fillText(zahl, x + 90, 225)
+    onClick(x, y, 180, 270, () => console.log("Ich wurde angeklickt"))
   }
   console.log(state.G.geldmarkt)
   geldzeichnen(
