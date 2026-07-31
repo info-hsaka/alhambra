@@ -149,7 +149,8 @@ export const Game = {
     /** @type {Move} */
     clickGeld: ({ G, ctx, playerID, events, random }, z) => {
       G.spielerhände[playerID].push(G.geldmarkt[z].pop())
-      console.log(G.geldmarkt)
+      // if (G.geldmarkt[z][0].zahl) {
+      // }
     },
     clickHaus: ({ G, ctx, playerID, events, random }, z) => {
       G.hausmarkt[z].pop()
