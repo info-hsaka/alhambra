@@ -107,7 +107,6 @@ export function draw(
       moves.clickHaus(z)
     })
   }
-  console.log(state.G.hausmarkt)
   hauszeichnen(
     state.G.hausmarkt[0][0].farbe,
     state.G.hausmarkt[0][0].zahl,
@@ -137,4 +136,21 @@ export function draw(
     3,
   )
   // Hauszeichnen
+  //Handkarten zeichnen
+  function handkartenzeichnen(farbe, zahl, x, y, z) {
+    ctx.fillStyle = farbe
+    ctx.fillRect(x, y, 180, 270)
+    ctx.fillStyle = "black"
+    ctx.font = "120px oldstandard"
+    ctx.textAlign = "center"
+    ctx.textBaseline = "middle"
+    ctx.fillText(zahl, x + 90, 225)
+  }
+  handkartenzeichnen(
+    state.G.geldmarkt[1][0].farbe,
+    state.G.geldmarkt[1][0].zahl,
+    380,
+    100,
+    1,
+  )
 }
