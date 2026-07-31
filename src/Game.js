@@ -149,8 +149,11 @@ export const Game = {
     /** @type {Move} */
     clickGeld: ({ G, ctx, playerID, events, random }, z) => {
       G.spielerhände[playerID].push(G.geldmarkt[z].pop())
-      // if (G.geldmarkt[z][0].zahl) {
-      // }
+      if (G.geldmarkt[z][0].zahl < 5) {
+        clickGeld
+      } else {
+        events.endTurn()
+      }
     },
     clickHaus: ({ G, ctx, playerID, events, random }, z) => {
       G.hausmarkt[z].pop()
@@ -179,7 +182,7 @@ export const Game = {
     onEnd: ({ G, ctx, events, random }) => {},
 
     minMoves: 1,
-    maxMoves: 1,
+    maxMoves: 0,
   },
 
   minPlayers: 2,
