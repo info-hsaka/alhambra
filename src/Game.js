@@ -130,10 +130,11 @@ export const Game = {
 
   moves: {
     /** @type {Move} */
-    playCard: ({ G, ctx, playerID, events, random }, cardIndex) => {
-      clickGeld: function clickGeld(move, z) {
-        geldmarkt[z][0].pop()
-      }
+    clickGeld: ({ G, ctx, playerID, events, random }, z) => {
+      G.geldmarkt[z][0].pop()
+    },
+    clickHaus: ({ G, ctx, playerID, events, random }, z) => {
+      G.hausmarkt[z][0].pop()
     },
     drawCard(ctx) {},
   },

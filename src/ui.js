@@ -39,7 +39,7 @@ export function draw(
     ctx.textBaseline = "middle"
     ctx.fillText(zahl, x + 90, 225)
     onClick(x, y, 180, 270, () => {
-      clickGeld(z)
+      moves.clickGeld(z)
     })
   }
   console.log(state.G.geldmarkt)
@@ -95,7 +95,7 @@ export function draw(
   ctx.strokeText("4", 1025, 635)
 
   //Hauskarten
-  function hauszeichnen(farbe, zahl, x, y) {
+  function hauszeichnen(farbe, zahl, x, y, z) {
     ctx.fillStyle = farbe
     ctx.fillRect(x, y, 150, 150)
     ctx.fillStyle = "black"
@@ -104,7 +104,7 @@ export function draw(
     ctx.textBaseline = "middle"
     ctx.fillText(zahl, x + 75, y + 75)
     onClick(x, y, 150, 150, () => {
-      clickHaus(x)
+      moves.clickHaus(z)
     })
   }
   console.log(state.G.hausmarkt)
@@ -113,24 +113,28 @@ export function draw(
     state.G.hausmarkt[0][0].zahl,
     110,
     560,
+    0,
   )
   hauszeichnen(
     state.G.hausmarkt[1][0].farbe,
     state.G.hausmarkt[1][0].zahl,
     390,
     560,
+    1,
   )
   hauszeichnen(
     state.G.hausmarkt[2][0].farbe,
     state.G.hausmarkt[2][0].zahl,
     670,
     560,
+    2,
   )
   hauszeichnen(
     state.G.hausmarkt[3][0].farbe,
     state.G.hausmarkt[3][0].zahl,
     950,
     560,
+    3,
   )
   // Hauszeichnen
 }
