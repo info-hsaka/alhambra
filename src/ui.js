@@ -18,13 +18,13 @@ export function draw(
   ctx.fillRect(660, 100, 180, 270)
   ctx.fillRect(940, 100, 180, 270)
   ctx.fillStyle = "yellow"
-  ctx.fillRect(135, 450, 80, 80)
+  ctx.fillRect(140, 450, 90, 90)
   ctx.fillStyle = "green"
-  ctx.fillRect(415, 450, 100, 100)
+  ctx.fillRect(420, 450, 90, 90)
   ctx.fillStyle = "blue"
-  ctx.fillRect(695, 450, 100, 100)
+  ctx.fillRect(700, 450, 90, 90)
   ctx.fillStyle = "orange"
-  ctx.fillRect(975, 450, 100, 100)
+  ctx.fillRect(980, 450, 90, 90)
 
   //Geldkarten zeichnen
   function geldzeichnen(farbe, zahl, x, y) {
@@ -66,6 +66,6 @@ export function draw(
   ctx.fillStyle = "rgb(194, 114, 22)"
   ctx.fillRect(110, 560, 150, 150)
   ctx.fillRect(390, 560, 150, 150)
-  ctx.fillRect(670, 550, 150, 150)
-  ctx.fillRect(950, 550, 150, 150)
+  ctx.fillRect(670, 560, 150, 150)
+  ctx.fillRect(950, 560, 150, 150)
 }
