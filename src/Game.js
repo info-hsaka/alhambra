@@ -1,5 +1,6 @@
 /** @import { Game, Move } from "boardgame.io" */
 import { TurnOrder } from "boardgame.io/core"
+import { FlushAndValidate } from "boardgame.io/src/plugins/main"
 
 /** @type {Game} */
 export const Game = {
@@ -129,7 +130,11 @@ export const Game = {
 
   moves: {
     /** @type {Move} */
-    playCard: ({ G, ctx, playerID, events, random }, cardIndex) => {},
+    playCard: ({ G, ctx, playerID, events, random }, cardIndex) => {
+      clickGeld: function clickGeld(move, z) {
+        geldmarkt[z][0].pop()
+      }
+    },
     drawCard(ctx) {},
   },
 
