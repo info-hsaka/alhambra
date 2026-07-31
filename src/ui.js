@@ -147,8 +147,17 @@ export function draw(
     ctx.fillText(zahl, x + 90, 225)
   }
   handkartenzeichnen(
-    state.G.geldmarkt[1][0].farbe,
-    state.G.geldmarkt[1][0].zahl,
+    for (let i = 0; i < spielerhände[1].length; i++) {
+      state.G.spielerhände[1][i].farbe,
+    state.G.spielerhände[1][i].zahl,
+    380,
+    100,
+    1,
+    }
+  )
+  handkartenzeichnen(
+    state.G.spielerhände[0][0].farbe,
+    state.G.spielerhände[0][0].zahl,
     380,
     100,
     1,
