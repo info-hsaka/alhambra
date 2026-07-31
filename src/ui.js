@@ -83,4 +83,40 @@ export function draw(
   ctx.strokeText("2", 465, 635)
   ctx.strokeText("3", 745, 635)
   ctx.strokeText("4", 1025, 635)
+
+  //Hauskarten
+  function hauszeichnen(farbe, zahl, x, y) {
+    ctx.fillStyle = farbe
+    ctx.fillRect(x, y, 180, 270)
+    ctx.fillStyle = "black"
+    ctx.font = "120px oldstandard"
+    ctx.textAlign = "center"
+    ctx.textBaseline = "middle"
+    ctx.fillText(zahl, x + 90, 225)
+  }
+  console.log(state.G.hausmarkt)
+  hauszeichnen(
+    state.G.hausmarkt[0][0].farbe,
+    state.G.hausmarkt[0][0].zahl,
+    100,
+    100,
+  )
+  hauszeichnen(
+    state.G.hausmarkt[1][0].farbe,
+    state.G.hausmarkt[1][0].zahl,
+    380,
+    100,
+  )
+  hauszeichnen(
+    state.G.hausmarkt[2][0].farbe,
+    state.G.hausmarkt[2][0].zahl,
+    660,
+    100,
+  )
+  hauszeichnen(
+    state.G.hausmarkt[3][0].farbe,
+    state.G.hausmarkt[3][0].zahl,
+    940,
+    100,
+  )
 }
