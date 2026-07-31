@@ -97,6 +97,7 @@ export function draw(
     ctx.textAlign = "center"
     ctx.textBaseline = "middle"
     ctx.fillText(zahl, x + 75, y + 75)
+    onClick(x, y, 150, 150, () => console.log("Ich wurde angeklickt"))
   }
   console.log(state.G.hausmarkt)
   hauszeichnen(
