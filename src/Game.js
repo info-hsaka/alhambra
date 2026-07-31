@@ -157,6 +157,7 @@ export const Game = {
     },
     clickHaus: ({ G, ctx, playerID, events, random }, z) => {
       G.hausmarkt[z].pop()
+      events.endTurn()
     },
     drawCard(ctx) {},
   },
@@ -182,7 +183,7 @@ export const Game = {
     onEnd: ({ G, ctx, events, random }) => {},
 
     minMoves: 1,
-    maxMoves: 0,
+    maxMoves: 50,
   },
 
   minPlayers: 2,
