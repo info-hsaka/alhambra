@@ -141,7 +141,7 @@ export function draw(
     ctx.fillStyle = farbe
     ctx.fillRect(x, y, 120, 180)
     ctx.fillStyle = "black"
-    ctx.font = "120px oldstandard"
+    ctx.font = "100px oldstandard"
     ctx.textAlign = "center"
     ctx.textBaseline = "middle"
     ctx.fillText(zahl, x + 60, y + 90)
