@@ -9,7 +9,7 @@ export function draw(
 ) {
   const canvas = document.getElementById("canvas")
   const ctx = canvas.getContext("2d")
-  //Geldmarkt + hausmarkt leer
+  //Geldmarkt + Währungsanzeige von Hausmarkt
   console.log(canvas.width)
   console.log(canvas.height)
   ctx.fillStyle = "rgb(194, 114, 22)"
@@ -18,13 +18,13 @@ export function draw(
   ctx.fillRect(660, 100, 180, 270)
   ctx.fillRect(940, 100, 180, 270)
   ctx.fillStyle = "yellow"
-  ctx.fillRect(122.5, 450, 100, 100)
+  ctx.fillRect(135, 450, 100, 100)
   ctx.fillStyle = "green"
-  ctx.fillRect(402.5, 450, 135, 135)
+  ctx.fillRect(415, 450, 100, 100)
   ctx.fillStyle = "blue"
-  ctx.fillRect(682.5, 450, 135, 135)
+  ctx.fillRect(695, 450, 100, 100)
   ctx.fillStyle = "orange"
-  ctx.fillRect(962.5, 450, 135, 135)
+  ctx.fillRect(975, 450, 100, 100)
 
   //Geldkarten zeichnen
   function geldzeichnen(farbe, zahl, x, y) {
@@ -62,5 +62,10 @@ export function draw(
     100,
   )
 
-  //Hauskarten zeichnen
+  //Hauskartenfelder
+  ctx.fillStyle = "rgb(194, 114, 22)"
+  ctx.fillRect(135, 450, 150, 150)
+  ctx.fillRect(415, 450, 100, 100)
+  ctx.fillRect(695, 450, 100, 100)
+  ctx.fillRect(975, 450, 100, 100)
 }
