@@ -9,6 +9,8 @@ export function draw(
 ) {
   const canvas = document.getElementById("canvas")
   const ctx = canvas.getContext("2d")
+  ctx.fillStyle = "rgb(214, 191, 164)"
+  ctx.fillRect(0, 0, canvas.width, canvas.height)
   //Geldmarkt + Währungsanzeige von Hausmarkt
   console.log(canvas.width)
   console.log(canvas.height)
