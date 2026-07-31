@@ -30,7 +30,7 @@ export function draw(
   ctx.fillRect(980, 450, 90, 90)
 
   //Geldkarten zeichnen
-  function geldzeichnen(farbe, zahl, x, y) {
+  function geldzeichnen(farbe, zahl, x, y, z) {
     ctx.fillStyle = farbe
     ctx.fillRect(x, y, 180, 270)
     ctx.fillStyle = "black"
@@ -38,7 +38,9 @@ export function draw(
     ctx.textAlign = "center"
     ctx.textBaseline = "middle"
     ctx.fillText(zahl, x + 90, 225)
-    onClick(x, y, 180, 270, () => console.log("Ich wurde angeklickt"))
+    onClick(x, y, 180, 270, () => {
+      clickGeld(z)
+    })
   }
   console.log(state.G.geldmarkt)
   geldzeichnen(
@@ -46,24 +48,28 @@ export function draw(
     state.G.geldmarkt[0][0].zahl,
     100,
     100,
+    0,
   )
   geldzeichnen(
     state.G.geldmarkt[1][0].farbe,
     state.G.geldmarkt[1][0].zahl,
     380,
     100,
+    1,
   )
   geldzeichnen(
     state.G.geldmarkt[2][0].farbe,
     state.G.geldmarkt[2][0].zahl,
     660,
     100,
+    2,
   )
   geldzeichnen(
     state.G.geldmarkt[3][0].farbe,
     state.G.geldmarkt[3][0].zahl,
     940,
     100,
+    3,
   )
 
   //Hauskartenfelder
@@ -97,7 +103,9 @@ export function draw(
     ctx.textAlign = "center"
     ctx.textBaseline = "middle"
     ctx.fillText(zahl, x + 75, y + 75)
-    onClick(x, y, 150, 150, () => console.log("Ich wurde angeklickt"))
+    onClick(x, y, 150, 150, () => {
+      clickHaus(x)
+    })
   }
   console.log(state.G.hausmarkt)
   hauszeichnen(
