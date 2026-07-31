@@ -8,7 +8,7 @@
       "runtimeExecutable": "npm",
       "runtimeArgs": ["start"],
       "cwd": "${workspaceRoot}"
-    },
+      },
     {
       "type": "node",
       "request": "launch",

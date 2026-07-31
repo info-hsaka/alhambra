@@ -20,12 +20,15 @@ export const Game = {
     }
     geldstapel = random.Shuffle(geldstapel)
 
+    let spielerReihenfolge = []
+
     // Spielerhände
     let spielerhände = []
     for (let index = 0; index < 2; index++) {
       let hand = []
       spielerhände.push(hand) //Karten in hand geben, in spielerhände zwei leere arrays (jetzt)
     }
+
     // {farbe: zahl:}
     // [[],[{farbe:blau, Zahl: 3},{}]]
     // karten aufteilen
@@ -51,6 +54,13 @@ export const Game = {
         break
       }
     }
+    // spielerreihenfolge
+    if (spielerhände[0].length < spielerhände[1].length) {
+      spielerReihenfolge = [[0], [1]]
+    } else {
+      spielerReihenfolge = [[1], [0]]
+    }
+    console.log(spielerReihenfolge)
     // karten aufteilen fertig
     // geldstapel aufteilen
     let geldstapel1 = []
