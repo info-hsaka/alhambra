@@ -63,18 +63,24 @@ export function draw(
   )
 
   //Hauskartenfelder
-  ctx.fillStyle = "rgb(194, 114, 22)"
+  ctx.fillStyle = "rgb(230, 147, 52)"
   ctx.fillRect(110, 560, 150, 150)
   ctx.fillRect(390, 560, 150, 150)
   ctx.fillRect(670, 560, 150, 150)
   ctx.fillRect(950, 560, 150, 150)
 
-  ctx.fillStyle = "rgb(212, 160, 111)"
+  ctx.fillStyle = "rgb(128, 66, 9)"
   ctx.font = "100px oldstandard"
   ctx.textAlign = "center"
   ctx.textBaseline = "middle"
   ctx.fillText("1", 185, 635)
+  ctx.fillText("2", 465, 635)
+  ctx.fillText("3", 745, 635)
+  ctx.fillText("4", 1025, 635)
 
   ctx.strokeStyle = "black"
   ctx.strokeText("1", 185, 635)
+  ctx.strokeText("2", 465, 635)
+  ctx.strokeText("3", 745, 635)
+  ctx.strokeText("4", 1025, 635)
 }
