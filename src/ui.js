@@ -18,7 +18,7 @@ export function draw(
   ctx.fillRect(660, 100, 180, 270)
   ctx.fillRect(940, 100, 180, 270)
   ctx.fillStyle = "yellow"
-  ctx.fillRect(135, 450, 100, 100)
+  ctx.fillRect(135, 450, 80, 80)
   ctx.fillStyle = "green"
   ctx.fillRect(415, 450, 100, 100)
   ctx.fillStyle = "blue"
@@ -64,8 +64,8 @@ export function draw(
 
   //Hauskartenfelder
   ctx.fillStyle = "rgb(194, 114, 22)"
-  ctx.fillRect(135, 450, 150, 150)
-  ctx.fillRect(415, 450, 100, 100)
-  ctx.fillRect(695, 450, 100, 100)
-  ctx.fillRect(975, 450, 100, 100)
+  ctx.fillRect(110, 560, 150, 150)
+  ctx.fillRect(390, 560, 150, 150)
+  ctx.fillRect(670, 550, 150, 150)
+  ctx.fillRect(950, 550, 150, 150)
 }
