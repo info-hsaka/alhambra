@@ -31,7 +31,7 @@ export function draw(
     ctx.fillStyle = farbe
     ctx.fillRect(x, y, 180, 270)
     ctx.fillStyle = "black"
-    ctx.font = "100px Arial"
+    ctx.font = "120px oldstandard"
     ctx.textAlign = "center"
     ctx.textBaseline = "middle"
     ctx.fillText(zahl, x + 90, 225)
@@ -69,9 +69,12 @@ export function draw(
   ctx.fillRect(670, 560, 150, 150)
   ctx.fillRect(950, 560, 150, 150)
 
-  ctx.fillStyle = "rgb(252, 104, 5)"
-  ctx.font = "100px Arial"
+  ctx.fillStyle = "rgb(212, 160, 111)"
+  ctx.font = "100px oldstandard"
   ctx.textAlign = "center"
   ctx.textBaseline = "middle"
   ctx.fillText("1", 185, 635)
+
+  ctx.strokeStyle = "black"
+  ctx.strokeText("1", 185, 635)
 }
