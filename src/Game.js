@@ -151,14 +151,6 @@ export const Game = {
       G.spielerhände[playerID].push(G.geldmarkt[z].pop())
       if (G.geldmarkt[z][0].zahl < 5) {
         let x = G.geldmarkt[z][0].zahl
-        clickGeld: ({ G, ctx, playerID, events, random }, z) => {
-          if ((G.geldmarkt[z][0].zahl + x) < 5) {
-            G.spielerhände[playerID].push(G.geldmarkt[z].pop()
-            events.endTurn()
-          } else {
-            events.endTurn()
-          }
-        }
       } else {
         events.endTurn()
       }
