@@ -92,7 +92,8 @@ export function draw(
     ctx.font = "120px oldstandard"
     ctx.textAlign = "center"
     ctx.textBaseline = "middle"
-    ctx.fillText(zahl, x + 90, 225)
+    ctx.fillText(zahl, x + 75, y + 75)
+    ctx.strokeRect(140, 450, 90, 90)
   }
   console.log(state.G.hausmarkt)
   hauszeichnen(
@@ -119,4 +120,5 @@ export function draw(
     950,
     560,
   )
+  // Hauszeichnen
 }
