@@ -6,8 +6,9 @@ import { FlushAndValidate } from "boardgame.io/src/plugins/main"
 export const Game = {
   setup: ({ random, ctx }) => {
     let score = [0, 0, 0, 0]
-    let geldstapel = []
+
     // Geldstapel wird befüllt
+    let geldstapel = []
     let geldzahlen = [1, 2, 3, 4, 5, 6, 7, 8, 9]
     let geldfarben = ["blue", "yellow", "green", "orange"]
     for (let x = 0; x < 3; x++) {
