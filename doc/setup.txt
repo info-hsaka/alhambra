@@ -19,3 +19,21 @@ while (zahlen != 0) {
         summeZahlen = summeZahlen + spielerhände[1][zahlen - 1].zahl
         zahlen = zahlen - 1
       }
+
+
+
+
+
+      clickGeld: ({ G, ctx, playerID, events, random }, z) => {
+      G.spielerhände[playerID].push(G.geldmarkt[z].pop())
+      if (G.geldmarkt[z][0].zahl + G.rundenGeld < 5) {
+        G.rundenGeld = G.geldmarkt[z][0].zahl + G.rundenGeld
+      } else {
+        events.endTurn()
+      }
+
+
+      G.hausmarkt[z].pop()
+      events.endTurn()
+
+      maxMoves: 50,

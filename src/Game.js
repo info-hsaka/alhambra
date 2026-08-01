@@ -134,6 +134,7 @@ export const Game = {
 
     let geldmarkt = [[], [], [], []]
     let hausmarkt = [[], [], [], []]
+    let rundenGeld = 0
     return {
       score: score,
       geldstapel: geldstapel,
@@ -142,6 +143,7 @@ export const Game = {
       geldmarkt: geldmarkt,
       hausmarkt: hausmarkt,
       spielerReihenfolge: spielerReihenfolge,
+      rundenGeld: rundenGeld,
     }
   },
 
@@ -149,15 +151,9 @@ export const Game = {
     /** @type {Move} */
     clickGeld: ({ G, ctx, playerID, events, random }, z) => {
       G.spielerhände[playerID].push(G.geldmarkt[z].pop())
-      if (G.geldmarkt[z][0].zahl < 5) {
-        let x = G.geldmarkt[z][0].zahl
-      } else {
-        events.endTurn()
-      }
     },
     clickHaus: ({ G, ctx, playerID, events, random }, z) => {
       G.hausmarkt[z].pop()
-      events.endTurn()
     },
     drawCard(ctx) {},
   },
@@ -183,7 +179,7 @@ export const Game = {
     onEnd: ({ G, ctx, events, random }) => {},
 
     minMoves: 1,
-    maxMoves: 50,
+    maxMoves: 1,
   },
 
   minPlayers: 2,
