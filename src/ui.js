@@ -43,7 +43,6 @@ export function draw(
       moves.clickGeld(z)
     })
   }
-  console.log(state.G.geldmarkt)
   geldzeichnen(
     state.G.geldmarkt[0][0].farbe,
     state.G.geldmarkt[0][0].zahl,
