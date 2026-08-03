@@ -165,13 +165,14 @@ export const Game = {
     },
     clickHaus: ({ G, ctx, playerID, events, random }, z) => {
       G.hausspeicher.push(G.hausmarkt[z].pop())
+      clickFeld: ({ G, ctx, playerID, events, random }, spalte, zeile) => {
+        console.log(spalte, zeile)
+        G.spielfeld[zeile][spalte].push(G.hausspeicher.pop())
+      }
     },
-    clickFeld: ({ G, ctx, playerID, events, random }, spalte, zeile) => {
-      console.log(spalte, zeile)
-      G.spielfeld[zeile][spalte].push(G.hausspeicher.pop())
-    },
+
     drawCard(ctx) {},
-  }
+  },
 
   seed: "random-seed",
 
