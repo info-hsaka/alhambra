@@ -190,7 +190,7 @@ export function draw(
   for (let spalte = 0; spalte < 5; spalte = spalte + 1) {
     for (let zeile = 0; zeile < 5; zeile++) {
       ctx.strokeStyle = "black"
-      ctx.strokeRect(zeile)
+      ctx.strokeRect(spalte * 150 + 350, zeile * 150 + 1200, 150, 150)
     }
   }
 }
