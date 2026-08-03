@@ -192,9 +192,11 @@ export function draw(
     for (let zeile = 0; zeile < 5; zeile++) {
       ctx.strokeStyle = "black"
       ctx.strokeRect(spalte * 150 + 350, zeile * 150 + 1200, 150, 150)
-      onClick(spalte * 150 + 350, zeile * 150 + 1200, 150, 150, () => {
-        moves.clickFeld(spalte, zeile)
-      })
+      if (state.G.hausangeklickt == true) {
+        onClick(spalte * 150 + 350, zeile * 150 + 1200, 150, 150, () => {
+          moves.clickFeld(spalte, zeile)
+        })
+      }
     }
   }
 }

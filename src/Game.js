@@ -165,6 +165,7 @@ export const Game = {
 
     clickGeld: ({ G, ctx, playerID, events, random }, z) => {
       G.spielerhände[playerID].push(G.geldmarkt[z].pop())
+      events.endTurn()
     },
     clickHaus: ({ G, ctx, playerID, events, random }, z) => {
       G.hausspeicher.push(G.hausmarkt[z].pop())
@@ -172,6 +173,7 @@ export const Game = {
     clickFeld: ({ G, ctx, playerID, events, random }, spalte, zeile) => {
       console.log(spalte, zeile)
       G.spielfeld[zeile][spalte].push(G.hausspeicher.pop())
+      events.endTurn()
     },
     drawCard(ctx) {},
   },
