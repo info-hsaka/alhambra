@@ -171,7 +171,7 @@ export function draw(
       x = x + 150
     }
   }
-  let x = 0
+  x = 0
   if (state.ctx.currentPlayer == 1) {
     for (let i = 0; i < state.G.spielerhände[0].length; i++) {
       handkartenzeichnen(
