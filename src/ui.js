@@ -159,25 +159,31 @@ export function draw(
     ctx.fillText(zahl, x + 60, y + 90)
   }
   let x = 0
-  for (let i = 0; i < state.G.spielerhände[1].length; i++) {
-    handkartenzeichnen(
-      state.G.spielerhände[1][i].farbe,
-      state.G.spielerhände[1][i].zahl,
-      100 + x,
-      800,
-      1,
-    )
-    x = x + 150
+  if (state.ctx.currentPlayer == 0) {
+    for (let i = 0; i < state.G.spielerhände[1].length; i++) {
+      handkartenzeichnen(
+        state.G.spielerhände[1][i].farbe,
+        state.G.spielerhände[1][i].zahl,
+        100 + x,
+        800,
+        1,
+      )
+      x = x + 150
+    }
   }
-  /*for (let i = 0; i < state.G.spielerhände[0].length; i++) {
-    handkartenzeichnen(
-      state.G.spielerhände[0][i].farbe,
-      state.G.spielerhände[0][i].zahl,
-      380,
-      800,
-      0,
-    )
-  }*/
+  let x = 0
+  if (state.ctx.currentPlayer == 1) {
+    for (let i = 0; i < state.G.spielerhände[0].length; i++) {
+      handkartenzeichnen(
+        state.G.spielerhände[0][i].farbe,
+        state.G.spielerhände[0][i].zahl,
+        100 + x,
+        800,
+        0,
+      )
+      x = x + 150
+    }
+  }
   //hausspeicher
   function hausspeicher(farbe, zahl, x, y, z) {
     ctx.fillStyle = farbe
@@ -198,12 +204,11 @@ export function draw(
     )
   }
   //Alhambragitter(links) 2 spieler
-  console.log(ctx.currentPlayer, ctx)
   for (let spalte = 0; spalte < 5; spalte = spalte + 1) {
     for (let zeile = 0; zeile < 5; zeile++) {
       ctx.strokeStyle = "black"
       ctx.strokeRect(spalte * 150 + 350, zeile * 150 + 1200, 150, 150)
-      if (state.G.hausangeklickt == true && ctx.currentPlayer == 0) {
+      if (state.G.hausangeklickt == true && state.ctx.currentPlayer == 0) {
         onClick(spalte * 150 + 350, zeile * 150 + 1200, 150, 150, () => {
           moves.clickFeld(spalte, zeile)
         })
@@ -215,7 +220,7 @@ export function draw(
     for (let zeile = 0; zeile < 5; zeile++) {
       ctx.strokeStyle = "black"
       ctx.strokeRect(spalte * 150 + 1350, zeile * 150 + 1200, 150, 150)
-      if (state.G.hausangeklickt == true && ctx.currentPlayer == 1) {
+      if (state.G.hausangeklickt == true && state.ctx.currentPlayer == 1) {
         onClick(spalte * 150 + 1350, zeile * 150 + 1200, 150, 150, () => {
           moves.clickFeldRechts(spalte, zeile)
         })
