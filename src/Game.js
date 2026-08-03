@@ -172,10 +172,11 @@ export const Game = {
       G.hausangeklickt = true
     },
     clickFeld: ({ G, ctx, playerID, events, random }, spalte, zeile) => {
-      console.log(spalte, zeile)
-      G.spielfeld[zeile][spalte].push(G.hausspeicher.pop())
-      G.hausangeklickt = false
-      events.endTurn()
+      if (G.spielfeld[zeile][spalte].length == 0) {
+        G.spielfeld[zeile][spalte].push(G.hausspeicher.pop())
+        G.hausangeklickt = false
+        events.endTurn()
+      }
     },
     drawCard(ctx) {},
   },
