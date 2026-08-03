@@ -156,6 +156,7 @@ export const Game = {
       rundenGeld: rundenGeld,
       hausspeicher: hausspeicher,
       spielfeld: spielfeld,
+      hausangeklickt: hausangeklickt,
     }
   },
 
