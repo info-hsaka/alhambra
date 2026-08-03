@@ -111,34 +111,42 @@ export function draw(
       })
     }
   }
-  hauszeichnen(
-    state.G.hausmarkt[0][0].farbe,
-    state.G.hausmarkt[0][0].zahl,
-    110,
-    560,
-    0,
-  )
-  hauszeichnen(
-    state.G.hausmarkt[1][0].farbe,
-    state.G.hausmarkt[1][0].zahl,
-    390,
-    560,
-    1,
-  )
-  hauszeichnen(
-    state.G.hausmarkt[2][0].farbe,
-    state.G.hausmarkt[2][0].zahl,
-    670,
-    560,
-    2,
-  )
-  hauszeichnen(
-    state.G.hausmarkt[3][0].farbe,
-    state.G.hausmarkt[3][0].zahl,
-    950,
-    560,
-    3,
-  )
+  if (state.G.hausmarkt[0] != 0) {
+    hauszeichnen(
+      state.G.hausmarkt[0][0].farbe,
+      state.G.hausmarkt[0][0].zahl,
+      110,
+      560,
+      0,
+    )
+  }
+  if (state.G.hausmarkt[1] != 0) {
+    hauszeichnen(
+      state.G.hausmarkt[1][0].farbe,
+      state.G.hausmarkt[1][0].zahl,
+      390,
+      560,
+      1,
+    )
+  }
+  if (state.G.hausmarkt[2] != 0) {
+    hauszeichnen(
+      state.G.hausmarkt[2][0].farbe,
+      state.G.hausmarkt[2][0].zahl,
+      670,
+      560,
+      2,
+    )
+  }
+  if (state.G.hausmarkt[3] != 0) {
+    hauszeichnen(
+      state.G.hausmarkt[3][0].farbe,
+      state.G.hausmarkt[3][0].zahl,
+      950,
+      560,
+      3,
+    )
+  }
   // Hauszeichnen
   //Handkarten zeichnen
   function handkartenzeichnen(farbe, zahl, x, y, z) {
