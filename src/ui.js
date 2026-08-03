@@ -221,13 +221,15 @@ export function draw(
   }
   for (let spalte = 0; spalte < 5; spalte++) {
     for (let zeile = 0; zeile < 5; zeile++) {
-      gitter(
-        state.G.spielfeld[spalte][zeile].farbe,
-        state.G.spielfeld[zeile].zahl,
-        100,
-        1200,
-        0,
-      )
+      if (state.G.spielfeld[zeile][spalte].length != 0) {
+        gitter(
+          state.G.spielfeld[zeile][spalte][0].farbe,
+          state.G.spielfeld[zeile][spalte][0].zahl,
+          spalte * 150 + 350,
+          zeile * 150 + 1200,
+          0,
+        )
+      }
     }
   }
 }
