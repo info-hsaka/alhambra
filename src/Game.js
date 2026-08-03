@@ -137,6 +137,13 @@ export const Game = {
     let hausmarkt = [[], [], [], []]
     let hausspeicher = []
     let rundenGeld = 0
+    let spielfeld = [
+      [[][][][][]]
+      []
+      []
+      []
+      []
+    ]
     return {
       score: score,
       geldstapel: geldstapel,
