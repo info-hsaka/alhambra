@@ -144,6 +144,13 @@ export const Game = {
       [[], [], [], [], []],
       [[], [], [], [], []],
     ]
+    let spielfeldRechts = [
+      [[], [], [], [], []],
+      [[], [], [], [], []],
+      [[], [], [], [], []],
+      [[], [], [], [], []],
+      [[], [], [], [], []],
+    ]
     let hausangeklickt = false
     return {
       score: score,
@@ -157,6 +164,7 @@ export const Game = {
       hausspeicher: hausspeicher,
       spielfeld: spielfeld,
       hausangeklickt: hausangeklickt,
+      spielfeldRechts: spielfeldRechts,
     }
   },
 

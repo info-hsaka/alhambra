@@ -197,13 +197,25 @@ export function draw(
       0,
     )
   }
-  //Alhambragitter
+  //Alhambragitter(links)
   for (let spalte = 0; spalte < 5; spalte = spalte + 1) {
     for (let zeile = 0; zeile < 5; zeile++) {
       ctx.strokeStyle = "black"
       ctx.strokeRect(spalte * 150 + 350, zeile * 150 + 1200, 150, 150)
       if (state.G.hausangeklickt == true) {
         onClick(spalte * 150 + 350, zeile * 150 + 1200, 150, 150, () => {
+          moves.clickFeld(spalte, zeile)
+        })
+      }
+    }
+  }
+  //Alhambragitter(rechts)
+  for (let spalte = 0; spalte < 5; spalte = spalte + 1) {
+    for (let zeile = 0; zeile < 5; zeile++) {
+      ctx.strokeStyle = "black"
+      ctx.strokeRect(spalte * 150 + 1350, zeile * 150 + 1200, 150, 150)
+      if (state.G.hausangeklickt == true) {
+        onClick(spalte * 150 + 1350, zeile * 150 + 1200, 150, 150, () => {
           moves.clickFeld(spalte, zeile)
         })
       }
@@ -226,6 +238,21 @@ export function draw(
           state.G.spielfeld[zeile][spalte][0].farbe,
           state.G.spielfeld[zeile][spalte][0].zahl,
           spalte * 150 + 350,
+          zeile * 150 + 1200,
+          0,
+        )
+      }
+    }
+  }
+
+  //spielfeld rechts karten anlegen
+  for (let spalte = 0; spalte < 5; spalte++) {
+    for (let zeile = 0; zeile < 5; zeile++) {
+      if (state.G.spielfeldRechts[zeile][spalte].length != 0) {
+        gitter(
+          state.G.spielfeldRechts[zeile][spalte][0].farbe,
+          state.G.spielfeldRechtss[zeile][spalte][0].zahl,
+          spalte * 150 + 1350,
           zeile * 150 + 1200,
           0,
         )
