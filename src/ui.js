@@ -216,7 +216,7 @@ export function draw(
       ctx.strokeRect(spalte * 150 + 1350, zeile * 150 + 1200, 150, 150)
       if (state.G.hausangeklickt == true) {
         onClick(spalte * 150 + 1350, zeile * 150 + 1200, 150, 150, () => {
-          moves.clickFeld(spalte, zeile)
+          moves.clickFeldRechts(spalte, zeile)
         })
       }
     }

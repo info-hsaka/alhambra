@@ -186,6 +186,13 @@ export const Game = {
         events.endTurn()
       }
     },
+    clickFeldRechts: ({ G, ctx, playerID, events, random }, spalte, zeile) => {
+      if (G.spielfeldRechts[zeile][spalte].length == 0) {
+        G.spielfeldRechts[zeile][spalte].push(G.hausspeicher.pop())
+        G.hausangeklickt = false
+        events.endTurn()
+      }
+    },
     drawCard(ctx) {},
   },
 
