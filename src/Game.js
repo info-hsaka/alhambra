@@ -138,11 +138,11 @@ export const Game = {
     let hausspeicher = []
     let rundenGeld = 0
     let spielfeld = [
-      [[][][][][]]
-      []
-      []
-      []
-      []
+      [[], [], [], [], []],
+      [[], [], [], [], []],
+      [[], [], [], [], []],
+      [[], [], [], [], []],
+      [[], [], [], [], []],
     ]
     return {
       score: score,
@@ -154,6 +154,7 @@ export const Game = {
       spielerReihenfolge: spielerReihenfolge,
       rundenGeld: rundenGeld,
       hausspeicher: hausspeicher,
+      spielfeld: spielfeld,
     }
   },
 
@@ -167,9 +168,10 @@ export const Game = {
     },
     clickFeld: ({ G, ctx, playerID, events, random }, spalte, zeile) => {
       console.log(spalte, zeile)
+      G.spielfeld[zeile][spalte].push(G.hausspeicher.pop())
     },
     drawCard(ctx) {},
-  },
+  }
 
   seed: "random-seed",
 
