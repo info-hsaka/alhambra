@@ -187,4 +187,10 @@ export function draw(
       0,
     )
   }
+  for (let spalte = 0; spalte < 5; spalte = spalte + 1) {
+    for (let zeile = 0; zeile < 5; zeile++) {
+      ctx.strokeStyle = "black"
+      ctx.strokeRect(zeile)
+    }
+  }
 }
