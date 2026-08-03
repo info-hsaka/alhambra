@@ -135,6 +135,7 @@ export const Game = {
 
     let geldmarkt = [[], [], [], []]
     let hausmarkt = [[], [], [], []]
+
     let rundenGeld = 0
     return {
       score: score,
