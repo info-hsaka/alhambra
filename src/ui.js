@@ -174,9 +174,6 @@ export function draw(
     ctx.textAlign = "center"
     ctx.textBaseline = "middle"
     ctx.fillText(zahl, x + 75, y + 75)
-    onClick(x, y, 150, 150, () => {
-      moves.clickHausspeicher(z)
-    })
   }
   if (state.G.hausspeicher.length != 0) {
     hausspeicher(
@@ -192,7 +189,7 @@ export function draw(
       ctx.strokeStyle = "black"
       ctx.strokeRect(spalte * 150 + 350, zeile * 150 + 1200, 150, 150)
       onClick(spalte * 150 + 350, zeile * 150 + 1200, 150, 150, () => {
-        moves.clickFeld(spalte, feld)
+        moves.clickFeld(spalte, zeile)
       })
     }
   }

@@ -158,7 +158,9 @@ export const Game = {
     clickHaus: ({ G, ctx, playerID, events, random }, z) => {
       G.hausspeicher.push(G.hausmarkt[z].pop())
     },
-
+    clickFeld: ({ G, ctx, playerID, events, random }, spalte, zeile) => {
+      console.log(spalte, zeile)
+    },
     drawCard(ctx) {},
   },
 
