@@ -251,7 +251,7 @@ export function draw(
       if (state.G.spielfeldRechts[zeile][spalte].length != 0) {
         gitter(
           state.G.spielfeldRechts[zeile][spalte][0].farbe,
-          state.G.spielfeldRechtss[zeile][spalte][0].zahl,
+          state.G.spielfeldRechts[zeile][spalte][0].zahl,
           spalte * 150 + 1350,
           zeile * 150 + 1200,
           0,
