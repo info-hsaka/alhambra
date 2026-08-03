@@ -178,7 +178,7 @@ export function draw(
       0,
     )
   }*/
- //hausspeicher
+  //hausspeicher
   function hausspeicher(farbe, zahl, x, y, z) {
     ctx.fillStyle = farbe
     ctx.fillRect(x, y, 150, 150)
@@ -210,7 +210,7 @@ export function draw(
     }
   }
   //Karten anlegen
-  function gitter (farbe, zahl, x, y, z) {
+  function gitter(farbe, zahl, x, y, z) {
     ctx.fillStyle = farbe
     ctx.fillRect(x, y, 150, 150)
     ctx.fillStyle = "black"
@@ -221,15 +221,13 @@ export function draw(
   }
   for (let spalte = 0; spalte < 5; spalte++) {
     for (let zeile = 0; zeile < 5; zeile++) {
-       gitter(
-      state.G.[0].farbe,
-      state.G.hausspeicher[0].zahl,
-      100,
-      1200,
-      0,
-    )
-
+      gitter(
+        state.G.spielfeld[spalte][zeile].farbe,
+        state.G.spielfeld[zeile].zahl,
+        100,
+        1200,
+        0,
+      )
     }
-
   }
 }
