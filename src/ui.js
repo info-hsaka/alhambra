@@ -197,24 +197,25 @@ export function draw(
       0,
     )
   }
-  //Alhambragitter(links)
+  //Alhambragitter(links) 2 spieler
+  console.log(ctx.currentPlayer, ctx)
   for (let spalte = 0; spalte < 5; spalte = spalte + 1) {
     for (let zeile = 0; zeile < 5; zeile++) {
       ctx.strokeStyle = "black"
       ctx.strokeRect(spalte * 150 + 350, zeile * 150 + 1200, 150, 150)
-      if (state.G.hausangeklickt == true) {
+      if (state.G.hausangeklickt == true && ctx.currentPlayer == 0) {
         onClick(spalte * 150 + 350, zeile * 150 + 1200, 150, 150, () => {
           moves.clickFeld(spalte, zeile)
         })
       }
     }
   }
-  //Alhambragitter(rechts)
+  //Alhambragitter(rechts) 2 spieler
   for (let spalte = 0; spalte < 5; spalte = spalte + 1) {
     for (let zeile = 0; zeile < 5; zeile++) {
       ctx.strokeStyle = "black"
       ctx.strokeRect(spalte * 150 + 1350, zeile * 150 + 1200, 150, 150)
-      if (state.G.hausangeklickt == true) {
+      if (state.G.hausangeklickt == true && ctx.currentPlayer == 1) {
         onClick(spalte * 150 + 1350, zeile * 150 + 1200, 150, 150, () => {
           moves.clickFeldRechts(spalte, zeile)
         })
