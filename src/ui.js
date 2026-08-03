@@ -178,6 +178,7 @@ export function draw(
       0,
     )
   }*/
+ //hausspeicher
   function hausspeicher(farbe, zahl, x, y, z) {
     ctx.fillStyle = farbe
     ctx.fillRect(x, y, 150, 150)
@@ -196,6 +197,7 @@ export function draw(
       0,
     )
   }
+  //Alhambragitter
   for (let spalte = 0; spalte < 5; spalte = spalte + 1) {
     for (let zeile = 0; zeile < 5; zeile++) {
       ctx.strokeStyle = "black"
@@ -206,5 +208,28 @@ export function draw(
         })
       }
     }
+  }
+  //Karten anlegen
+  function gitter (farbe, zahl, x, y, z) {
+    ctx.fillStyle = farbe
+    ctx.fillRect(x, y, 150, 150)
+    ctx.fillStyle = "black"
+    ctx.font = "120px oldstandard"
+    ctx.textAlign = "center"
+    ctx.textBaseline = "middle"
+    ctx.fillText(zahl, x + 75, y + 75)
+  }
+  for (let spalte = 0; spalte < 5; spalte++) {
+    for (let zeile = 0; zeile < 5; zeile++) {
+       gitter(
+      state.G.[0].farbe,
+      state.G.hausspeicher[0].zahl,
+      100,
+      1200,
+      0,
+    )
+
+    }
+
   }
 }
