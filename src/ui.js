@@ -166,4 +166,25 @@ export function draw(
       0,
     )
   }*/
+  function hausspeicher(farbe, zahl, x, y, z) {
+    ctx.fillStyle = farbe
+    ctx.fillRect(x, y, 150, 150)
+    ctx.fillStyle = "black"
+    ctx.font = "120px oldstandard"
+    ctx.textAlign = "center"
+    ctx.textBaseline = "middle"
+    ctx.fillText(zahl, x + 75, y + 75)
+    onClick(x, y, 150, 150, () => {
+      moves.clickHausspeicher(z)
+    })
+  }
+  if (state.G.hausspeicher.length != 0) {
+    hausspeicher(
+      state.G.hausspeicher[0].farbe,
+      state.G.hausspeicher[0].zahl,
+      100,
+      1200,
+      0,
+    )
+  }
 }
