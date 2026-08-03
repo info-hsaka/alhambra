@@ -144,6 +144,7 @@ export const Game = {
       [[], [], [], [], []],
       [[], [], [], [], []],
     ]
+    let hausangeklickt = false
     return {
       score: score,
       geldstapel: geldstapel,
@@ -160,17 +161,17 @@ export const Game = {
 
   moves: {
     /** @type {Move} */
+
     clickGeld: ({ G, ctx, playerID, events, random }, z) => {
       G.spielerhände[playerID].push(G.geldmarkt[z].pop())
     },
     clickHaus: ({ G, ctx, playerID, events, random }, z) => {
       G.hausspeicher.push(G.hausmarkt[z].pop())
-      clickFeld: ({ G, ctx, playerID, events, random }, spalte, zeile) => {
-        console.log(spalte, zeile)
-        G.spielfeld[zeile][spalte].push(G.hausspeicher.pop())
-      }
     },
-
+    clickFeld: ({ G, ctx, playerID, events, random }, spalte, zeile) => {
+      console.log(spalte, zeile)
+      G.spielfeld[zeile][spalte].push(G.hausspeicher.pop())
+    },
     drawCard(ctx) {},
   },
 
