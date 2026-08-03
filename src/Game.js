@@ -135,7 +135,7 @@ export const Game = {
 
     let geldmarkt = [[], [], [], []]
     let hausmarkt = [[], [], [], []]
-
+    let hausspeicher = []
     let rundenGeld = 0
     return {
       score: score,
@@ -146,6 +146,7 @@ export const Game = {
       hausmarkt: hausmarkt,
       spielerReihenfolge: spielerReihenfolge,
       rundenGeld: rundenGeld,
+      hausspeicher: hausspeicher,
     }
   },
 
@@ -155,7 +156,7 @@ export const Game = {
       G.spielerhände[playerID].push(G.geldmarkt[z].pop())
     },
     clickHaus: ({ G, ctx, playerID, events, random }, z) => {
-      G.hausmarkt[z].pop()
+      G.hausspeicher.push(G.hausmarkt[z].pop())
     },
     drawCard(ctx) {},
   },
