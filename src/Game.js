@@ -197,7 +197,7 @@ export const Game = {
     onEnd: ({ G, ctx, events, random }) => {},
 
     minMoves: 1,
-    maxMoves: 1,
+    maxMoves: 100,
   },
 
   minPlayers: 2,

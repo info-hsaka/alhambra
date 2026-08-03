@@ -39,9 +39,11 @@ export function draw(
     ctx.textAlign = "center"
     ctx.textBaseline = "middle"
     ctx.fillText(zahl, x + 90, 225)
-    onClick(x, y, 180, 270, () => {
-      moves.clickGeld(z)
-    })
+    if (state.G.hausangeklickt == false) {
+      onClick(x, y, 180, 270, () => {
+        moves.clickGeld(z)
+      })
+    }
   }
   geldzeichnen(
     state.G.geldmarkt[0][0].farbe,
@@ -103,9 +105,11 @@ export function draw(
     ctx.textAlign = "center"
     ctx.textBaseline = "middle"
     ctx.fillText(zahl, x + 75, y + 75)
-    onClick(x, y, 150, 150, () => {
-      moves.clickHaus(z)
-    })
+    if (state.G.hausangeklickt == false) {
+      onClick(x, y, 150, 150, () => {
+        moves.clickHaus(z)
+      })
+    }
   }
   hauszeichnen(
     state.G.hausmarkt[0][0].farbe,
