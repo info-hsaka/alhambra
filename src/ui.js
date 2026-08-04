@@ -265,11 +265,79 @@ export function draw(
   for (let spalte = 0; spalte < 5; spalte = spalte + 1) {
     for (let zeile = 0; zeile < 5; zeile++) {
       ctx.strokeStyle = "black"
-      ctx.strokeRect(spalte * 150 + 1350, zeile * 150 + 1200, 150, 150)
-      if (state.G.hausangeklickt == true && state.ctx.currentPlayer == 1) {
-        onClick(spalte * 150 + 1350, zeile * 150 + 1200, 150, 150, () => {
-          moves.clickFeldRechts(spalte, zeile)
-        })
+
+      if (state.G.spielfeld[zeile][spalte].length != 0) {
+        if (state.G.hausangeklickt == true && state.ctx.currentPlayer == 1) {
+          let spalteNeu = spalte - 1
+          if (spalteNeu != -1) {
+            ctx.strokeRect(spalteNeu * 150 + 1350, zeile * 150 + 1200, 150, 150)
+
+            onClick(
+              spalteNeu * 150 + 1350,
+              zeile * 150 + 1200,
+              150,
+              150,
+              () => {
+                moves.clickFeld(spalteNeu, zeile)
+              },
+            )
+          }
+
+          let spalteNeu1 = spalte + 1
+          if (spalteNeu1 != 5) {
+            ctx.strokeRect(
+              spalteNeu1 * 150 + 1350,
+              zeile * 150 + 1200,
+              150,
+              150,
+            )
+
+            onClick(
+              spalteNeu1 * 150 + 1350,
+              zeile * 150 + 1200,
+              150,
+              150,
+              () => {
+                moves.clickFeld(spalteNeu1, zeile)
+              },
+            )
+          }
+
+          let zeileNeu = zeile - 1
+          if (zeileNeu != -1) {
+            ctx.strokeRect(spalte * 150 + 1350, zeileNeu * 150 + 1200, 150, 150)
+
+            onClick(
+              spalte * 150 + 1350,
+              zeileNeu * 150 + 1200,
+              150,
+              150,
+              () => {
+                moves.clickFeld(spalte, zeileNeu)
+              },
+            )
+          }
+
+          let zeileNeu1 = zeile + 1
+          if (zeileNeu1 != 5) {
+            ctx.strokeRect(
+              spalte * 150 + 1350,
+              zeileNeu1 * 150 + 1200,
+              150,
+              150,
+            )
+
+            onClick(
+              spalte * 150 + 1350,
+              zeileNeu1 * 150 + 1200,
+              150,
+              150,
+              () => {
+                moves.clickFeld(spalte, zeileNeu1)
+              },
+            )
+          }
+        }
       }
     }
   }
