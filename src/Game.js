@@ -207,13 +207,12 @@ export const Game = {
       events.endTurn()
     },
     clickHaus: ({ G, ctx, playerID, events, random }, z) => {
+      G.hausangeklickt = true
       if (geldbezahlt >= G.hausmarkt[z][0].zahl) {
         G.hausspeicher.push(G.hausmarkt[z].pop())
-        G.hausangeklickt = true
       }
     },
     clickFeld: ({ G, ctx, playerID, events, random }, spalte, zeile) => {
-      console.log(zeile, spalte)
       if (G.spielfeld[zeile][spalte].length == 0) {
         G.spielfeld[zeile][spalte].push(G.hausspeicher.pop())
         G.hausangeklickt = false
