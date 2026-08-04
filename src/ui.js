@@ -210,42 +210,24 @@ export function draw(
       ctx.strokeRect(spalte * 150 + 350, zeile * 150 + 1200, 150, 150)
       if (state.G.spielfeld[zeile][spalte].length != 0) {
         if (state.G.hausangeklickt == true && state.ctx.currentPlayer == 0) {
-          onClick(
-            (spalte - 1) * 150 + 350,
-            zeile * 150 + 1200,
-            150,
-            150,
-            () => {
-              moves.clickFeld(spalte - 1, zeile)
-            },
-          )
-          onClick(
-            (spalte + 1) * 150 + 350,
-            zeile * 150 + 1200,
-            150,
-            150,
-            () => {
-              moves.clickFeld(spalte + 1, zeile)
-            },
-          )
-          onClick(
-            spalte * 150 + 350,
-            (zeile - 1) * 150 + 1200,
-            150,
-            150,
-            () => {
-              moves.clickFeld(spalte, zeile - 1)
-            },
-          )
-          onClick(
-            spalte * 150 + 350,
-            (zeile + 1) * 150 + 1200,
-            150,
-            150,
-            () => {
-              moves.clickFeld(spalte, zeile + 1)
-            },
-          )
+          spalte = spalte - 1
+          onClick(spalte * 150 + 350, zeile * 150 + 1200, 150, 150, () => {
+            moves.clickFeld(spalte, zeile)
+          })
+          spalte = spalte + 2
+          onClick(spalte * 150 + 350, zeile * 150 + 1200, 150, 150, () => {
+            moves.clickFeld(spalte, zeile)
+          })
+          spalte = spalte - 1
+          zeile = zeile - 1
+          onClick(spalte * 150 + 350, zeile * 150 + 1200, 150, 150, () => {
+            moves.clickFeld(spalte, zeile)
+          })
+          zeile = zeile + 2
+          onClick(spalte * 150 + 350, zeile * 150 + 1200, 150, 150, () => {
+            moves.clickFeld(spalte, zeile)
+          })
+          zeile = zeile - 1
         }
       }
     }
