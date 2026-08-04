@@ -113,6 +113,7 @@ export function draw(
         moves.clickHaus(z)
       })
     }
+    else
   }
   if (state.G.hausmarkt[0] != 0) {
     hauszeichnen(

@@ -181,6 +181,7 @@ export const Game = {
     ]
     let hausangeklickt = false
     let geldbezahlt = 0
+    let geklicktesHaus = 4
     return {
       score: score,
       geldstapel: geldstapel,
@@ -208,6 +209,7 @@ export const Game = {
     },
     clickHaus: ({ G, ctx, playerID, events, random }, z) => {
       G.hausangeklickt = true
+      G.geklicktesHaus = z
       console.log(G.hausangeklickt, "Hausangeklickt ausgeführt")
       if (G.geldbezahlt >= G.hausmarkt[z][0].zahl) {
         G.hausspeicher.push(G.hausmarkt[z].pop())
