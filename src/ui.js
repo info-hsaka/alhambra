@@ -212,13 +212,13 @@ export function draw(
         if (state.G.hausangeklickt == true && state.ctx.currentPlayer == 0) {
           let spalteNeu = spalte - 1
           onClick(spalte * 150 + 350, zeile * 150 + 1200, 150, 150, () => {
-            //moves.clickFeld(spalte, zeile)
-            console.log(spalteNeu, zeile)
-          })
-          spalte = spalte + 2
-          onClick(spalte * 150 + 350, zeile * 150 + 1200, 150, 150, () => {
             moves.clickFeld(spalte, zeile)
           })
+          let spalteNeu1 =
+            spalte +
+            onClick(spalte * 150 + 350, zeile * 150 + 1200, 150, 150, () => {
+              moves.clickFeld(spalte, zeile)
+            })
           spalte = spalte - 1
           zeile = zeile - 1
           onClick(spalte * 150 + 350, zeile * 150 + 1200, 150, 150, () => {
