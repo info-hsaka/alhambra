@@ -184,6 +184,19 @@ export function draw(
       x = x + 150
     }
   }
+  x = 0
+  if (state.ctx.currentPlayer == 2) {
+    for (let i = 0; i < state.G.spielerhände[2].length; i++) {
+      handkartenzeichnen(
+        state.G.spielerhände[2][i].farbe,
+        state.G.spielerhände[2][i].zahl,
+        100 + x,
+        800,
+        2,
+      )
+      x = x + 150
+    }
+  }
   //hausspeicher
   function hausspeicher(farbe, zahl, x, y, z) {
     ctx.fillStyle = farbe
@@ -341,6 +354,86 @@ export function draw(
       }
     }
   }
+  // spielfeldAFD ( Rechts Rechts)
+  for (let spalte = 0; spalte < 5; spalte = spalte + 1) {
+    for (let zeile = 0; zeile < 5; zeile++) {
+      ctx.strokeStyle = "black"
+
+      if (state.G.spielfeldAFD[zeile][spalte].length != 0) {
+        if (state.G.hausangeklickt == true && state.ctx.currentPlayer == 2) {
+          let spalteNeu = spalte - 1
+          if (spalteNeu != -1) {
+            ctx.strokeRect(spalteNeu * 150 + 2350, zeile * 150 + 1200, 150, 150)
+
+            onClick(
+              spalteNeu * 150 + 2350,
+              zeile * 150 + 1200,
+              150,
+              150,
+              () => {
+                moves.clickFeldAFD(spalteNeu, zeile)
+              },
+            )
+          }
+
+          let spalteNeu1 = spalte + 1
+          if (spalteNeu1 != 5) {
+            ctx.strokeRect(
+              spalteNeu1 * 150 + 2350,
+              zeile * 150 + 1200,
+              150,
+              150,
+            )
+
+            onClick(
+              spalteNeu1 * 150 + 2350,
+              zeile * 150 + 1200,
+              150,
+              150,
+              () => {
+                moves.clickFeldAFD(spalteNeu1, zeile)
+              },
+            )
+          }
+
+          let zeileNeu = zeile - 1
+          if (zeileNeu != -1) {
+            ctx.strokeRect(spalte * 150 + 2350, zeileNeu * 150 + 1200, 150, 150)
+
+            onClick(
+              spalte * 150 + 2350,
+              zeileNeu * 150 + 1200,
+              150,
+              150,
+              () => {
+                moves.clickFeldAFD(spalte, zeileNeu)
+              },
+            )
+          }
+
+          let zeileNeu1 = zeile + 1
+          if (zeileNeu1 != 5) {
+            ctx.strokeRect(
+              spalte * 150 + 2350,
+              zeileNeu1 * 150 + 1200,
+              150,
+              150,
+            )
+
+            onClick(
+              spalte * 150 + 2350,
+              zeileNeu1 * 150 + 1200,
+              150,
+              150,
+              () => {
+                moves.clickFeldAFD(spalte, zeileNeu1)
+              },
+            )
+          }
+        }
+      }
+    }
+  }
   //Karten anlegen
   function gitter(farbe, zahl, x, y, z) {
     ctx.fillStyle = farbe
@@ -379,9 +472,25 @@ export function draw(
       }
     }
   }
+  // spielfeld afd anlegen
+  for (let spalte = 0; spalte < 5; spalte++) {
+    for (let zeile = 0; zeile < 5; zeile++) {
+      if (state.G.spielfeldAFD[zeile][spalte].length != 0) {
+        gitter(
+          state.G.spielfeldAFD[zeile][spalte][0].farbe,
+          state.G.spielfeldAFD[zeile][spalte][0].zahl,
+          spalte * 150 + 2350,
+          zeile * 150 + 1200,
+          0,
+        )
+      }
+    }
+  }
   // Brunnen
   ctx.fillStyle = "green"
   ctx.fillRect(650, 1500, 150, 150)
   ctx.fillStyle = "white"
   ctx.fillRect(1650, 1500, 150, 150)
+  ctx.fillStyle = "blue"
+  ctx.fillRect(2650, 1500, 150, 150)
 }
