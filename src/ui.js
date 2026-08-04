@@ -266,7 +266,7 @@ export function draw(
     for (let zeile = 0; zeile < 5; zeile++) {
       ctx.strokeStyle = "black"
 
-      if (state.G.spielfeld[zeile][spalte].length != 0) {
+      if (state.G.spielfeldRechts[zeile][spalte].length != 0) {
         if (state.G.hausangeklickt == true && state.ctx.currentPlayer == 1) {
           let spalteNeu = spalte - 1
           if (spalteNeu != -1) {
@@ -278,7 +278,7 @@ export function draw(
               150,
               150,
               () => {
-                moves.clickFeld(spalteNeu, zeile)
+                moves.clickFeldRechts(spalteNeu, zeile)
               },
             )
           }
@@ -298,7 +298,7 @@ export function draw(
               150,
               150,
               () => {
-                moves.clickFeld(spalteNeu1, zeile)
+                moves.clickFeldRechts(spalteNeu1, zeile)
               },
             )
           }
@@ -313,7 +313,7 @@ export function draw(
               150,
               150,
               () => {
-                moves.clickFeld(spalte, zeileNeu)
+                moves.clickFeldRechts(spalte, zeileNeu)
               },
             )
           }
@@ -333,7 +333,7 @@ export function draw(
               150,
               150,
               () => {
-                moves.clickFeld(spalte, zeileNeu1)
+                moves.clickFeldRechts(spalte, zeileNeu1)
               },
             )
           }
