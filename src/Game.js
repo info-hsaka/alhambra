@@ -25,7 +25,7 @@ export const Game = {
 
     // Spielerhände
     let spielerhände = []
-    for (let index = 0; index < 2; index++) {
+    for (let index = 0; index < 3; index++) {
       let hand = []
       spielerhände.push(hand) //Karten in hand geben, in spielerhände zwei leere arrays (jetzt)
     }
@@ -55,12 +55,33 @@ export const Game = {
         break
       }
     }
-    // spielerreihenfolge
-    if (spielerhände[0].length < spielerhände[1].length) {
-      spielerReihenfolge = [0, 1]
-    } else {
-      spielerReihenfolge = [1, 0]
+    // Fehler möglich 3 spieler
+    while (true) {
+      spielerhände[2].push(geldstapel.pop())
+      let zahlen = spielerhände[2].length // 1
+      let summeZahlen = 0
+      for (const element of spielerhände[2]) {
+        summeZahlen = element.zahl + summeZahlen
+      }
+      if (summeZahlen >= 20) {
+        break
+      }
     }
+    // spielerreihenfolge
+    if (
+      spielerhände[0].length < spielerhände[1].length &&
+      spielerhände[0].length < spielerhände[2].length
+    ) {
+      spielerReihenfolge = [0, 1, 2]
+    } else if (
+      spielerhände[1].length < spielerhände[0].length &&
+      spielerhände[1].length < spielerhände[2].length
+    ) {
+      spielerReihenfolge = [1, 2, 0]
+    } else {
+      spielerReihenfolge = [2, 0, 1]
+    }
+
     console.log(spielerReihenfolge)
     // karten aufteilen fertig
     // geldstapel aufteilen
