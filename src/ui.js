@@ -208,6 +208,8 @@ export function draw(
     for (let zeile = 0; zeile < 5; zeile++) {
       ctx.strokeStyle = "black"
       ctx.strokeRect(spalte * 150 + 350, zeile * 150 + 1200, 150, 150)
+      if (state.G.spielfeld[spalte][zeile] != 0) {
+      }
       if (state.G.hausangeklickt == true && state.ctx.currentPlayer == 0) {
         onClick(spalte * 150 + 350, zeile * 150 + 1200, 150, 150, () => {
           moves.clickFeld(spalte, zeile)
