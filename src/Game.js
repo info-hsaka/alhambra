@@ -180,6 +180,7 @@ export const Game = {
       [[], [], [], [], []],
     ]
     let hausangeklickt = false
+    let geldbezahlt = 0
     return {
       score: score,
       geldstapel: geldstapel,
@@ -194,6 +195,7 @@ export const Game = {
       hausangeklickt: hausangeklickt,
       spielfeldRechts: spielfeldRechts,
       spielfeldAFD: spielfeldAFD,
+      geldbezahlt: geldbezahlt,
     }
   },
 
@@ -205,8 +207,10 @@ export const Game = {
       events.endTurn()
     },
     clickHaus: ({ G, ctx, playerID, events, random }, z) => {
-      G.hausspeicher.push(G.hausmarkt[z].pop())
-      G.hausangeklickt = true
+      if (geldbezahlt >= G.hausmarkt[z][0].zahl) {
+        G.hausspeicher.push(G.hausmarkt[z].pop())
+        G.hausangeklickt = true
+      }
     },
     clickFeld: ({ G, ctx, playerID, events, random }, spalte, zeile) => {
       console.log(zeile, spalte)
