@@ -206,29 +206,26 @@ export function draw(
   //Alhambragitter(links) 2 spieler
   for (let spalte = 0; spalte < 5; spalte = spalte + 1) {
     for (let zeile = 0; zeile < 5; zeile++) {
-      ctx.strokeStyle = "black"
-      ctx.strokeRect(spalte * 150 + 350, zeile * 150 + 1200, 150, 150)
+      //ctx.strokeStyle = "black"
+      //ctx.strokeRect(spalte * 150 + 350, zeile * 150 + 1200, 150, 150)
       if (state.G.spielfeld[zeile][spalte].length != 0) {
         if (state.G.hausangeklickt == true && state.ctx.currentPlayer == 0) {
           let spalteNeu = spalte - 1
-          onClick(spalte * 150 + 350, zeile * 150 + 1200, 150, 150, () => {
-            moves.clickFeld(spalte, zeile)
+          onClick(spalteNeu * 150 + 350, zeile * 150 + 1200, 150, 150, () => {
+            moves.clickFeld(spalteNeu, zeile)
           })
-          let spalteNeu1 =
-            spalte +
-            onClick(spalte * 150 + 350, zeile * 150 + 1200, 150, 150, () => {
-              moves.clickFeld(spalte, zeile)
-            })
-          spalte = spalte - 1
-          zeile = zeile - 1
-          onClick(spalte * 150 + 350, zeile * 150 + 1200, 150, 150, () => {
-            moves.clickFeld(spalte, zeile)
+          let spalteNeu1 = spalte + 1
+          onClick(spalteNeu1 * 150 + 350, zeile * 150 + 1200, 150, 150, () => {
+            moves.clickFeld(spalteNeu1, zeile)
           })
-          zeile = zeile + 2
-          onClick(spalte * 150 + 350, zeile * 150 + 1200, 150, 150, () => {
-            moves.clickFeld(spalte, zeile)
+          let zeileNeu = zeile - 1
+          onClick(spalte * 150 + 350, zeileNeu * 150 + 1200, 150, 150, () => {
+            moves.clickFeld(spalte, zeileNeu)
           })
-          zeile = zeile - 1
+          let zeileNeu1 = zeile + 1
+          onClick(spalte * 150 + 350, zeileNeu1 * 150 + 1200, 150, 150, () => {
+            moves.clickFeld(spalte, zeileNeu1)
+          })
         }
       }
     }
