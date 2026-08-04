@@ -172,6 +172,13 @@ export const Game = {
       [[], [], [], [], []],
       [[], [], [], [], []],
     ]
+    let spielfeldAFD = [
+      [[], [], [], [], []],
+      [[], [], [], [], []],
+      [[], [], [{ farbe: "blue", zahl: "B" }], [], []],
+      [[], [], [], [], []],
+      [[], [], [], [], []],
+    ]
     let hausangeklickt = false
     return {
       score: score,
@@ -186,6 +193,7 @@ export const Game = {
       spielfeld: spielfeld,
       hausangeklickt: hausangeklickt,
       spielfeldRechts: spielfeldRechts,
+      spielfeldAFD: spielfeldAFD,
     }
   },
 
@@ -211,6 +219,13 @@ export const Game = {
     clickFeldRechts: ({ G, ctx, playerID, events, random }, spalte, zeile) => {
       if (G.spielfeldRechts[zeile][spalte].length == 0) {
         G.spielfeldRechts[zeile][spalte].push(G.hausspeicher.pop())
+        G.hausangeklickt = false
+        events.endTurn()
+      }
+    },
+    clickFeldAFD: ({ G, ctx, playerID, events, random }, spalte, zeile) => {
+      if (G.spielfeldAFD[zeile][spalte].length == 0) {
+        G.spielfeldAFD[zeile][spalte].push(G.hausspeicher.pop())
         G.hausangeklickt = false
         events.endTurn()
       }
