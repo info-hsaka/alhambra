@@ -208,7 +208,8 @@ export const Game = {
     },
     clickHaus: ({ G, ctx, playerID, events, random }, z) => {
       G.hausangeklickt = true
-      if (geldbezahlt >= G.hausmarkt[z][0].zahl) {
+      console.log(G.hausangeklickt, "Hausangeklickt ausgeführt")
+      if (G.geldbezahlt >= G.hausmarkt[z][0].zahl) {
         G.hausspeicher.push(G.hausmarkt[z].pop())
       }
     },

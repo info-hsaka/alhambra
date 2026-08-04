@@ -106,8 +106,8 @@ export function draw(
     ctx.textBaseline = "middle"
     ctx.fillText(zahl, x + 75, y + 75)
     if (state.G.hausangeklickt == false) {
-      ctx.lineWidth = 10
       onClick(x, y, 150, 150, () => {
+        ctx.lineWidth = 10
         ctx.strokeStyle = "red"
         ctx.strokeRect(x - 10, y - 10, 170, 170)
         moves.clickHaus(z)
