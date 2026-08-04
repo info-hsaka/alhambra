@@ -221,7 +221,7 @@ export const Game = {
     maxMoves: 100,
   },
 
-  minPlayers: 2,
+  minPlayers: 3,
   maxPlayers: 4,
 
   disableUndo: true,
