@@ -265,4 +265,7 @@ export function draw(
       }
     }
   }
+  // Brunnen
+  ctx.fillStyle = "green"
+  ctx.fillRect(650, 1500, 150, 150)
 }
