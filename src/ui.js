@@ -210,9 +210,10 @@ export function draw(
       ctx.strokeRect(spalte * 150 + 350, zeile * 150 + 1200, 150, 150)
       if (state.G.spielfeld[zeile][spalte].length != 0) {
         if (state.G.hausangeklickt == true && state.ctx.currentPlayer == 0) {
-          spalte = spalte - 1
+          let spalteNeu = spalte - 1
           onClick(spalte * 150 + 350, zeile * 150 + 1200, 150, 150, () => {
-            moves.clickFeld(spalte, zeile)
+            //moves.clickFeld(spalte, zeile)
+            console.log(spalteNeu, zeile)
           })
           spalte = spalte + 2
           onClick(spalte * 150 + 350, zeile * 150 + 1200, 150, 150, () => {
