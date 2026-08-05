@@ -114,6 +114,7 @@ export function draw(
         moves.clickHaus(z)
       })
     }
+    if (state.G.hausangeklcikt)
   }
   ctx.lineWidth = 2
   if (state.G.hausmarkt[0] != 0) {
