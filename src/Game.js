@@ -298,6 +298,9 @@ export const Game = {
         if (G.geldmarkt[i].length == 0) {
           G.geldmarkt[i].push(G.geldstapel.pop())
         }
+        if (G.geldmarkt[i] == "Wertungkarte1") {
+          G.geldmarkt[i].pop()
+        }
       }
       for (let i = 0; i < 4; i++) {
         if (G.hausmarkt[i].length == 0) {
