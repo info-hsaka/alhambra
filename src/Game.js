@@ -182,6 +182,7 @@ export const Game = {
     let hausangeklickt = false
     let geldbezahlt = 0
     let geklicktesHaus = 4
+
     return {
       score: score,
       geldstapel: geldstapel,
@@ -236,7 +237,9 @@ export const Game = {
         events.endTurn()
       }
     },
-    clickHandkarte: ({ G, ctx, playerID, events, random }, i) => {},
+    clickHandkarte: ({ G, ctx, playerID, events, random }, i) => {
+      if (G.spielerhände[])
+    },
     drawCard(ctx) {},
   },
 
