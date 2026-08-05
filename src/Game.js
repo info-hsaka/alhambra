@@ -304,11 +304,13 @@ export const Game = {
           G.geldmarkt[i].pop()
           for (const zeile of G.spielfeld) {
             for (let spalte = 0; spalte < 5; spalte++) {
-              let gebäudeFarbe = zeile[spalte][0].farbe
-              for (const farben of G.hausfarben) {
-                if (gebäudeFarbe == farben) {
-                  G.farbigeHäuser0[hausfarben.indexOf(farben)] =
-                    G.farbigeHäuser0[hausfarben.indexOf(farben)] + 1
+              if (zeile[spalte] != 0) {
+                let gebäudeFarbe = zeile[spalte][0].farbe
+                for (const farben of G.hausfarben) {
+                  if (gebäudeFarbe == farben) {
+                    G.farbigeHäuser0[hausfarben.indexOf(farben)] =
+                      G.farbigeHäuser0[hausfarben.indexOf(farben)] + 1
+                  }
                 }
               }
             }
