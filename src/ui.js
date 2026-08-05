@@ -107,13 +107,15 @@ export function draw(
     ctx.fillText(zahl, x + 75, y + 75)
     if (state.G.hausangeklickt == false) {
       onClick(x, y, 150, 150, () => {
-        ctx.lineWidth = 5
+        ctx.lineWidth = 10
+        console.log("irgendwas")
         ctx.strokeStyle = "red"
         ctx.strokeRect(x - 10, y - 10, 170, 170)
         moves.clickHaus(z)
       })
     }
   }
+  ctx.lineWidth = 2
   if (state.G.hausmarkt[0] != 0) {
     hauszeichnen(
       state.G.hausmarkt[0][0].farbe,
