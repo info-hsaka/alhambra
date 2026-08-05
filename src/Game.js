@@ -182,6 +182,8 @@ export const Game = {
     let hausangeklickt = false
     let geldbezahlt = 0
     let geklicktesHaus = 4
+    let zwischenspeichergeld = []
+    let ablegestapel = []
 
     return {
       score: score,
@@ -249,13 +251,13 @@ export const Game = {
       ) {
         G.geldbezahlt = G.geldbezahlt + G.spielerhände[playerID][i].zahl
       } else if (
-        G.spielerhände[playerID][i].farbe == "" &&
-        G.geklicktesHaus == 1
+        G.spielerhände[playerID][i].farbe == "blue" &&
+        G.geklicktesHaus == 2
       ) {
         G.geldbezahlt = G.geldbezahlt + G.spielerhände[playerID][i].zahl
       } else if (
-        G.spielerhände[playerID][i].farbe == "green" &&
-        G.geklicktesHaus == 1
+        G.spielerhände[playerID][i].farbe == "orange" &&
+        G.geklicktesHaus == 3
       ) {
         G.geldbezahlt = G.geldbezahlt + G.spielerhände[playerID][i].zahl
       }
