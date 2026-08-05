@@ -236,6 +236,9 @@ export const Game = {
         events.endTurn()
       }
     },
+    clickHandkarte: ({ G, ctx, playerID, events, random }, i) => {
+      console.log("hey")
+    },
     drawCard(ctx) {},
   },
 

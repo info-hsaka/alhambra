@@ -156,7 +156,7 @@ export function draw(
   }
   // Hauszeichnen
   //Handkarten zeichnen
-  function handkartenzeichnen(farbe, zahl, x, y, z) {
+  function handkartenzeichnen(farbe, zahl, x, y, i) {
     ctx.fillStyle = farbe
     ctx.fillRect(x, y, 120, 180)
     ctx.fillStyle = "black"
@@ -164,6 +164,9 @@ export function draw(
     ctx.textAlign = "center"
     ctx.textBaseline = "middle"
     ctx.fillText(zahl, x + 60, y + 90)
+    onClick(x, y, 120, 180, () => {
+      moves.clickHandkarte(i)
+    })
   }
   let x = 0
   if (state.ctx.currentPlayer == 0) {
@@ -173,7 +176,7 @@ export function draw(
         state.G.spielerhände[1][i].zahl,
         100 + x,
         800,
-        1,
+        i,
       )
       x = x + 150
     }
@@ -186,7 +189,7 @@ export function draw(
         state.G.spielerhände[0][i].zahl,
         100 + x,
         800,
-        0,
+        i,
       )
       x = x + 150
     }
@@ -199,7 +202,7 @@ export function draw(
         state.G.spielerhände[2][i].zahl,
         100 + x,
         800,
-        2,
+        i,
       )
       x = x + 150
     }
