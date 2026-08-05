@@ -200,6 +200,9 @@ export const Game = {
       spielfeldRechts: spielfeldRechts,
       spielfeldAFD: spielfeldAFD,
       geldbezahlt: geldbezahlt,
+      geklicktesHaus: geklicktesHaus,
+      zwischenspeichergeld: zwischenspeichergeld,
+      ablegestapel: ablegestapel,
     }
   },
 
@@ -266,7 +269,7 @@ export const Game = {
         G.zwischenspeichergeld.push(i)
       }
 
-      if (G.geldbezahlt >= G.hausmarkt[z][0].zahl) {
+      if (G.geldbezahlt >= G.hausmarkt[G.geklicktesHaus][0].zahl) {
         for (const i of G.zwischenspeichergeld) {
           G.ablegestapel.push(G.spielerhände[playerID][i].pop())
         }
