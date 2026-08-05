@@ -271,7 +271,8 @@ export const Game = {
 
       if (G.geldbezahlt >= G.hausmarkt[G.geklicktesHaus][0].zahl) {
         for (const i of G.zwischenspeichergeld) {
-          G.ablegestapel.push(G.spielerhände[playerID][i].slice())
+          G.ablegestapel.push(G.spielerhände[playerID][i])
+          G.spielerhände[playerID].splice(i, 1)
         }
       }
     },
