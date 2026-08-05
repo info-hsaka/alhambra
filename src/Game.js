@@ -245,21 +245,31 @@ export const Game = {
         G.geklicktesHaus == 0
       ) {
         G.geldbezahlt = G.geldbezahlt + G.spielerhände[playerID][i].zahl
+        G.zwischenspeichergeld.push(i)
       } else if (
         G.spielerhände[playerID][i].farbe == "green" &&
         G.geklicktesHaus == 1
       ) {
         G.geldbezahlt = G.geldbezahlt + G.spielerhände[playerID][i].zahl
+        G.zwischenspeichergeld.push(i)
       } else if (
         G.spielerhände[playerID][i].farbe == "blue" &&
         G.geklicktesHaus == 2
       ) {
         G.geldbezahlt = G.geldbezahlt + G.spielerhände[playerID][i].zahl
+        G.zwischenspeichergeld.push(i)
       } else if (
         G.spielerhände[playerID][i].farbe == "orange" &&
         G.geklicktesHaus == 3
       ) {
         G.geldbezahlt = G.geldbezahlt + G.spielerhände[playerID][i].zahl
+        G.zwischenspeichergeld.push(i)
+      }
+
+      if (G.geldbezahlt >= G.hausmarkt[z][0].zahl) {
+        for (const i of G.zwischenspeichergeld) {
+          G.ablegestapel.push(G.spielerhände[playerID][i].pop())
+        }
       }
     },
     drawCard(ctx) {},
