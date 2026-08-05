@@ -217,9 +217,6 @@ export const Game = {
       G.hausangeklickt = true
       G.geklicktesHaus = z
       console.log(G.hausangeklickt, "Hausangeklickt ausgeführt")
-      if (G.geldbezahlt >= G.hausmarkt[z][0].zahl) {
-        G.hausspeicher.push(G.hausmarkt[z].pop())
-      }
     },
     clickFeld: ({ G, ctx, playerID, events, random }, spalte, zeile) => {
       if (G.spielfeld[zeile][spalte].length == 0) {
@@ -274,6 +271,7 @@ export const Game = {
           G.ablegestapel.push(G.spielerhände[playerID][i])
           G.spielerhände[playerID].splice(i, 1)
         }
+        G.hausspeicher.push(G.hausmarkt[G.geklicktesHaus].pop())
       }
     },
     drawCard(ctx) {},
