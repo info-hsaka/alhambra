@@ -300,6 +300,13 @@ export const Game = {
         }
         if (G.geldmarkt[i] == "Wertungkarte1") {
           G.geldmarkt[i].pop()
+          for (const zeile of G.spielfeld) {
+            for (let spalte = 0; spalte < 5; spalte++) {
+              let gebäudeFarbe = zeile[spalte][0].farbe
+              for (const farben of hausfarben) {
+              }
+            }
+          }
         }
       }
       for (let i = 0; i < 4; i++) {
