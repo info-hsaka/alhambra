@@ -299,6 +299,7 @@ export const Game = {
           G.geldmarkt[i].push(G.geldstapel.pop())
         }
         if (G.geldmarkt[i] == "Wertungkarte1") {
+          console.log("hallo")
           G.geldmarkt[i].pop()
           for (const zeile of G.spielfeld) {
             for (let spalte = 0; spalte < 5; spalte++) {
