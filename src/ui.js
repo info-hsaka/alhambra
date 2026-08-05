@@ -114,9 +114,10 @@ export function draw(
       ctx.lineWidth = 10
       ctx.strokeStyle = "red"
       ctx.strokeRect(x - 10, y - 10, 170, 170)
+      ctx.lineWidth = 2
     }
   }
-  ctx.lineWidth = 2
+
   if (state.G.hausmarkt[0] != 0) {
     hauszeichnen(
       state.G.hausmarkt[0][0].farbe,

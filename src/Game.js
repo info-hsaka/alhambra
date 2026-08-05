@@ -272,6 +272,8 @@ export const Game = {
           G.spielerhände[playerID].splice(i, 1)
         }
         G.hausspeicher.push(G.hausmarkt[G.geklicktesHaus].pop())
+        G.geldbezahlt = 0
+        G.geklicktesHaus = 4
       }
     },
     drawCard(ctx) {},
