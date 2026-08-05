@@ -303,7 +303,11 @@ export const Game = {
           for (const zeile of G.spielfeld) {
             for (let spalte = 0; spalte < 5; spalte++) {
               let gebäudeFarbe = zeile[spalte][0].farbe
-              for (const farben of hausfarben) {
+              for (const farben of G.hausfarben) {
+                if (gebäudeFarbe == farben) {
+                  G.farbigeHäuser0[hausfarben.indexOf(farben)] =
+                    G.farbigeHäuser0[hausfarben.indexOf(farben)] + 1
+                }
               }
             }
           }
