@@ -112,7 +112,6 @@ export function draw(
     }
     if (state.G.geklicktesHaus == z) {
       ctx.lineWidth = 10
-      console.log("irgendwas")
       ctx.strokeStyle = "red"
       ctx.strokeRect(x - 10, y - 10, 170, 170)
     }
