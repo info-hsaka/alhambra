@@ -184,6 +184,10 @@ export const Game = {
     let geklicktesHaus = 4
     let zwischenspeichergeld = []
     let ablegestapel = []
+    // anzahl der farbigen häuser
+    let farbigeHäuser0 = [0, 0, 0, 0, 0, 0]
+    let farbigeHäuser1 = [0, 0, 0, 0, 0, 0]
+    let farbigeHäuser2 = [0, 0, 0, 0, 0, 0]
 
     return {
       score: score,
@@ -203,6 +207,10 @@ export const Game = {
       geklicktesHaus: geklicktesHaus,
       zwischenspeichergeld: zwischenspeichergeld,
       ablegestapel: ablegestapel,
+      farbigeHäuser0: farbigeHäuser0,
+      farbigeHäuser1: farbigeHäuser1,
+      farbigeHäuser2: farbigeHäuser2,
+      hausfarben: hausfarben,
     }
   },
 
