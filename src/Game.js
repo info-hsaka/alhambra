@@ -242,6 +242,22 @@ export const Game = {
         G.spielerhände[playerID][i].farbe == "yellow" &&
         G.geklicktesHaus == 0
       ) {
+        G.geldbezahlt = G.geldbezahlt + G.spielerhände[playerID][i].zahl
+      } else if (
+        G.spielerhände[playerID][i].farbe == "green" &&
+        G.geklicktesHaus == 1
+      ) {
+        G.geldbezahlt = G.geldbezahlt + G.spielerhände[playerID][i].zahl
+      } else if (
+        G.spielerhände[playerID][i].farbe == "" &&
+        G.geklicktesHaus == 1
+      ) {
+        G.geldbezahlt = G.geldbezahlt + G.spielerhände[playerID][i].zahl
+      } else if (
+        G.spielerhände[playerID][i].farbe == "green" &&
+        G.geklicktesHaus == 1
+      ) {
+        G.geldbezahlt = G.geldbezahlt + G.spielerhände[playerID][i].zahl
       }
     },
     drawCard(ctx) {},
