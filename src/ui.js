@@ -110,7 +110,7 @@ export function draw(
         moves.clickHaus(z)
       })
     }
-    if (state.G.geklicktesHaus < 4) {
+    if (state.G.geklicktesHaus == z) {
       ctx.lineWidth = 10
       console.log("irgendwas")
       ctx.strokeStyle = "red"
