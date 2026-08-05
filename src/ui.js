@@ -168,7 +168,7 @@ export function draw(
     })
   }
   let x = 0
-  if (state.ctx.currentPlayer == 0) {
+  if (state.ctx.currentPlayer == 1) {
     for (let i = 0; i < state.G.spielerhände[1].length; i++) {
       handkartenzeichnen(
         state.G.spielerhände[1][i].farbe,
@@ -181,7 +181,7 @@ export function draw(
     }
   }
   x = 0
-  if (state.ctx.currentPlayer == 1) {
+  if (state.ctx.currentPlayer == 0) {
     for (let i = 0; i < state.G.spielerhände[0].length; i++) {
       handkartenzeichnen(
         state.G.spielerhände[0][i].farbe,

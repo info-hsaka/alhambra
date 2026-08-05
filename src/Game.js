@@ -238,7 +238,11 @@ export const Game = {
       }
     },
     clickHandkarte: ({ G, ctx, playerID, events, random }, i) => {
-      if (G.spielerhände[])
+      if (
+        G.spielerhände[playerID][i].farbe == "yellow" &&
+        G.geklicktesHaus == 0
+      ) {
+      }
     },
     drawCard(ctx) {},
   },
