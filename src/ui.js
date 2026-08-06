@@ -485,7 +485,6 @@ export function draw(
   for (let spalte = 0; spalte < 5; spalte++) {
     for (let zeile = 0; zeile < 5; zeile++) {
       if (state.G.spielfeld[zeile][spalte].length != 0) {
-        console.log(state.G.spielfeld[zeile][spalte])
         gitter(
           state.G.spielfeld[zeile][spalte][0].farbe,
           state.G.spielfeld[zeile][spalte][0].zahl,

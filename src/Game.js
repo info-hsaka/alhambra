@@ -240,9 +240,12 @@ export const Game = {
     },
     clickFeld: ({ G, ctx, playerID, events, random }, spalte, zeile) => {
       if (G.spielfeld[zeile][spalte].length == 0) {
+        let hausspeicherNeu = G.hausspeicher[0]
+        console.log(hausspeicherNeu)
+
         G.spielfeld[zeile][spalte].push(G.hausspeicher.pop())
         G.hausangeklickt = false
-        if (G.geldbezahlt != G.hausmarkt[G.geklicktesHaus][0].zahl) {
+        if (G.geldbezahlt != hausspeicherNeu.zahl) {
           events.endTurn()
         }
         G.geldbezahlt = 0
@@ -251,9 +254,12 @@ export const Game = {
     },
     clickFeldRechts: ({ G, ctx, playerID, events, random }, spalte, zeile) => {
       if (G.spielfeldRechts[zeile][spalte].length == 0) {
+        let hausspeicherNeu = G.hausspeicher[0]
+        console.log(hausspeicherNeu)
+
         G.spielfeldRechts[zeile][spalte].push(G.hausspeicher.pop())
         G.hausangeklickt = false
-        if (G.geldbezahlt != G.hausmarkt[G.geklicktesHaus][0].zahl) {
+        if (G.geldbezahlt != hausspeicherNeu.zahl) {
           events.endTurn()
         }
 
@@ -263,9 +269,12 @@ export const Game = {
     },
     clickFeldAFD: ({ G, ctx, playerID, events, random }, spalte, zeile) => {
       if (G.spielfeldAFD[zeile][spalte].length == 0) {
+        let hausspeicherNeu = G.hausspeicher[0]
+        console.log(hausspeicherNeu)
+
         G.spielfeldAFD[zeile][spalte].push(G.hausspeicher.pop())
         G.hausangeklickt = false
-        if (G.geldbezahlt != G.hausmarkt[G.geklicktesHaus][0].zahl) {
+        if (G.geldbezahlt != hausspeicherNeu.zahl) {
           events.endTurn()
         }
         G.geldbezahlt = 0
