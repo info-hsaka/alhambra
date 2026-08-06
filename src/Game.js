@@ -497,6 +497,9 @@ export const Game = {
           G.hausmarkt[i].push(G.hausstapel.pop())
         }
       }
+      G.scoreSpieler0 = Math.floor(G.scoreSpieler0)
+      G.scoreSpieler1 = Math.floor(G.scoreSpieler1)
+      G.scoreSpieler2 = Math.floor(G.scoreSpieler2)
     },
     onEnd: ({ G, ctx, events, random }) => {},
 
