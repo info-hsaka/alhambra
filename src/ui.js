@@ -45,34 +45,54 @@ export function draw(
       })
     }
   }
-  geldzeichnen(
-    state.G.geldmarkt[0][0].farbe,
-    state.G.geldmarkt[0][0].zahl,
-    100,
-    100,
-    0,
-  )
-  geldzeichnen(
-    state.G.geldmarkt[1][0].farbe,
-    state.G.geldmarkt[1][0].zahl,
-    380,
-    100,
-    1,
-  )
-  geldzeichnen(
-    state.G.geldmarkt[2][0].farbe,
-    state.G.geldmarkt[2][0].zahl,
-    660,
-    100,
-    2,
-  )
-  geldzeichnen(
-    state.G.geldmarkt[3][0].farbe,
-    state.G.geldmarkt[3][0].zahl,
-    940,
-    100,
-    3,
-  )
+  if (
+    state.G.geldmarkt[0][0] != "Wertungskarte1" ||
+    state.G.geldmarkt[0][0] != "Wertungskarte2"
+  ) {
+    geldzeichnen(
+      state.G.geldmarkt[0][0].farbe,
+      state.G.geldmarkt[0][0].zahl,
+      100,
+      100,
+      0,
+    )
+  }
+  if (
+    state.G.geldmarkt[1][0] != "Wertungskarte1" ||
+    state.G.geldmarkt[1][0] != "Wertungskarte2"
+  ) {
+    geldzeichnen(
+      state.G.geldmarkt[1][0].farbe,
+      state.G.geldmarkt[1][0].zahl,
+      380,
+      100,
+      1,
+    )
+  }
+  if (
+    state.G.geldmarkt[2][0] != "Wertungskarte1" ||
+    state.G.geldmarkt[2][0] != "Wertungskarte2"
+  ) {
+    geldzeichnen(
+      state.G.geldmarkt[2][0].farbe,
+      state.G.geldmarkt[2][0].zahl,
+      660,
+      100,
+      2,
+    )
+  }
+  if (
+    state.G.geldmarkt[3][0] != "Wertungskarte1" ||
+    state.G.geldmarkt[3][0] != "Wertungskarte2"
+  ) {
+    geldzeichnen(
+      state.G.geldmarkt[3][0].farbe,
+      state.G.geldmarkt[3][0].zahl,
+      940,
+      100,
+      3,
+    )
+  }
 
   //Hauskartenfelder
   ctx.fillStyle = "rgb(230, 147, 52)"
