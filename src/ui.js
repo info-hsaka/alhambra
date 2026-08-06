@@ -192,7 +192,7 @@ export function draw(
         ctx.strokeStyle = "red"
         ctx.lineWidth = 7
         ctx.strokeRect(x - 10, y - 10, 140, 200)
-        ctx.lineWidth =
+        ctx.lineWidth = 2
       }
     }
   }
