@@ -188,6 +188,12 @@ export function draw(
       moves.clickHandkarte(i)
     })
     for (const element of state.G.karteAusgesucht) {
+      if (element == i) {
+        ctx.strokeStyle = "red"
+        ctx.lineWidth = 7
+        ctx.strokeRect(x - 10, y - 10, 140, 200)
+        ctx.lineWidth =
+      }
     }
   }
   let x = 0
