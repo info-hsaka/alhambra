@@ -299,6 +299,7 @@ export const Game = {
           G.geldbezahlt = 0
           G.geklicktesHaus = 4
           G.karteAusgesucht = []
+          G.zwischenspeichergeld = []
         }
       }
     },
