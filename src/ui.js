@@ -538,6 +538,10 @@ export function draw(
   ctx.fillText("Score Spieler 1:    " + state.G.scoreSpieler0, 3800, 100)
   ctx.fillText("Score Spieler 2:    " + state.G.scoreSpieler1, 3800, 200)
   ctx.fillText("Score Spieler 3:    " + state.G.scoreSpieler2, 3800, 300)
+  ctx.font = "200px oldstandard"
+  ctx.textAlign = "left"
+  ctx.fillStyle = "black"
+  ctx.fillText("Spieler:     " + state.ctx.currentPlayer, 1400, 100)
 
   if (state.G.spielerbeendet == true) {
     ctx.fillStyle = "white"
