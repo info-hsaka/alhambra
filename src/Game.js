@@ -242,21 +242,34 @@ export const Game = {
       if (G.spielfeld[zeile][spalte].length == 0) {
         G.spielfeld[zeile][spalte].push(G.hausspeicher.pop())
         G.hausangeklickt = false
-        events.endTurn()
+        if (G.geldbezahlt != G.hausmarkt[G.geklicktesHaus][0].zahl) {
+          events.endTurn()
+        }
+        G.geldbezahlt = 0
+        G.geklicktesHaus = 4
       }
     },
     clickFeldRechts: ({ G, ctx, playerID, events, random }, spalte, zeile) => {
       if (G.spielfeldRechts[zeile][spalte].length == 0) {
         G.spielfeldRechts[zeile][spalte].push(G.hausspeicher.pop())
         G.hausangeklickt = false
-        events.endTurn()
+        if (G.geldbezahlt != G.hausmarkt[G.geklicktesHaus][0].zahl) {
+          events.endTurn()
+        }
+
+        G.geldbezahlt = 0
+        G.geklicktesHaus = 4
       }
     },
     clickFeldAFD: ({ G, ctx, playerID, events, random }, spalte, zeile) => {
       if (G.spielfeldAFD[zeile][spalte].length == 0) {
         G.spielfeldAFD[zeile][spalte].push(G.hausspeicher.pop())
         G.hausangeklickt = false
-        events.endTurn()
+        if (G.geldbezahlt != G.hausmarkt[G.geklicktesHaus][0].zahl) {
+          events.endTurn()
+        }
+        G.geldbezahlt = 0
+        G.geklicktesHaus = 4
       }
     },
     clickHandkarte: ({ G, ctx, playerID, events, random }, i) => {
