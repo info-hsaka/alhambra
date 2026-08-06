@@ -189,6 +189,10 @@ export const Game = {
     let farbigeHäuser1 = [0, 0, 0, 0, 0, 0]
     let farbigeHäuser2 = [0, 0, 0, 0, 0, 0]
 
+    let scoreSpieler0 = 0
+    let scoreSpieler1 = 0
+    let scoreSpieler2 = 0
+
     return {
       score: score,
       geldstapel: geldstapel,
@@ -211,6 +215,9 @@ export const Game = {
       farbigeHäuser1: farbigeHäuser1,
       farbigeHäuser2: farbigeHäuser2,
       hausfarben: hausfarben,
+      scoreSpieler0: scoreSpieler0,
+      scoreSpieler1: scoreSpieler1,
+      scoreSpieler2: scoreSpieler2,
     }
   },
 
@@ -315,6 +322,21 @@ export const Game = {
                   }
                 }
               }
+            }
+          }
+          for (let i = 0; i < 6; i++) {
+            if (
+              G.farbigeHäuser0[0].length < spielerhände[1].length &&
+              spielerhände[0].length < spielerhände[2].length
+            ) {
+              spielerReihenfolge = [0, 1, 2]
+            } else if (
+              spielerhände[1].length < spielerhände[0].length &&
+              spielerhände[1].length < spielerhände[2].length
+            ) {
+              spielerReihenfolge = [1, 2, 0]
+            } else {
+              spielerReihenfolge = [2, 0, 1]
             }
           }
         }
