@@ -505,5 +505,26 @@ export const Game = {
 
   disableUndo: true,
 
-  endIf: ({ G, ctx, random }) => {},
+  endIf: ({ G, ctx, random }) => {
+    if (G.hausstapel.length == 0) {
+      if (
+        G.scoreSpieler0 > G.scoreSpieler1 &&
+        G.scoreSpieler0 > G.scoreSpieler2
+      ) {
+        return "0"
+      } else if (
+        G.scoreSpieler1 > G.scoreSpieler2 &&
+        G.scoreSpieler1 > G.scoreSpieler2
+      ) {
+        return "1"
+      } else if (
+        G.scoreSpieler2 > G.scoreSpieler1 &&
+        G.scoreSpieler2 > G.scoreSpieler0
+      ) {
+        return "2"
+      } else {
+        return { draw: true }
+      }
+    }
+  },
 }
