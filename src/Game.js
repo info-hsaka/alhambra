@@ -194,6 +194,8 @@ export const Game = {
     let scoreSpieler1 = 0
     let scoreSpieler2 = 0
 
+    let karteAusgesucht = []
+
     return {
       score: score,
       geldstapel: geldstapel,
@@ -220,6 +222,7 @@ export const Game = {
       scoreSpieler1: scoreSpieler1,
       scoreSpieler2: scoreSpieler2,
       farbigeHäuser: farbigeHäuser,
+      karteAusgesucht: karteAusgesucht,
     }
   },
 
@@ -263,24 +266,28 @@ export const Game = {
       ) {
         G.geldbezahlt = G.geldbezahlt + G.spielerhände[playerID][i].zahl
         G.zwischenspeichergeld.push(i)
+        G.karteAusgesucht.push(i)
       } else if (
         G.spielerhände[playerID][i].farbe == "green" &&
         G.geklicktesHaus == 1
       ) {
         G.geldbezahlt = G.geldbezahlt + G.spielerhände[playerID][i].zahl
         G.zwischenspeichergeld.push(i)
+        G.karteAusgesucht.push(i)
       } else if (
         G.spielerhände[playerID][i].farbe == "blue" &&
         G.geklicktesHaus == 2
       ) {
         G.geldbezahlt = G.geldbezahlt + G.spielerhände[playerID][i].zahl
         G.zwischenspeichergeld.push(i)
+        G.karteAusgesucht.push(i)
       } else if (
         G.spielerhände[playerID][i].farbe == "orange" &&
         G.geklicktesHaus == 3
       ) {
         G.geldbezahlt = G.geldbezahlt + G.spielerhände[playerID][i].zahl
         G.zwischenspeichergeld.push(i)
+        G.karteAusgesucht.push(i)
       }
       if (G.geklicktesHaus < 4) {
         if (G.geldbezahlt >= G.hausmarkt[G.geklicktesHaus][0].zahl) {
@@ -291,6 +298,7 @@ export const Game = {
           G.hausspeicher.push(G.hausmarkt[G.geklicktesHaus].pop())
           G.geldbezahlt = 0
           G.geklicktesHaus = 4
+          G.karteAusgesucht = []
         }
       }
     },

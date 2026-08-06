@@ -187,6 +187,8 @@ export function draw(
     onClick(x, y, 120, 180, () => {
       moves.clickHandkarte(i)
     })
+    for (const element of state.G.karteAusgesucht) {
+    }
   }
   let x = 0
   if (state.ctx.currentPlayer == 1) {
