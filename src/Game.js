@@ -311,6 +311,24 @@ export const Game = {
                   if (gebäudeFarbe == farben) {
                     G.farbigeHäuser0[G.hausfarben.indexOf(farben)] =
                       G.farbigeHäuser0[G.hausfarben.indexOf(farben)] + 1
+                    G.geldmarkt[i].push(G.geldstapel.pop())
+                  }
+                }
+              }
+            }
+          }
+        }
+        if (G.geldmarkt[i][0] == "Wertungskarte2") {
+          G.geldmarkt[i].pop()
+          for (const zeile of G.spielfeld) {
+            for (let spalte = 0; spalte < 5; spalte++) {
+              if (zeile[spalte] != 0) {
+                let gebäudeFarbe = zeile[spalte][0].farbe
+                for (const farben of G.hausfarben) {
+                  if (gebäudeFarbe == farben) {
+                    G.farbigeHäuser0[G.hausfarben.indexOf(farben)] =
+                      G.farbigeHäuser0[G.hausfarben.indexOf(farben)] + 1
+                    G.geldmarkt[i].push(G.geldstapel.pop())
                   }
                 }
               }
