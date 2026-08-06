@@ -198,6 +198,8 @@ export const Game = {
 
     let spielbeendet = false
 
+    let sieger = 0
+
     return {
       score: score,
       geldstapel: geldstapel,
@@ -515,18 +517,22 @@ export const Game = {
         G.scoreSpieler0 > G.scoreSpieler2
       ) {
         return "0"
+        G.sieger = "Spieler 1"
       } else if (
         G.scoreSpieler1 > G.scoreSpieler2 &&
         G.scoreSpieler1 > G.scoreSpieler2
       ) {
         return "1"
+        G.sieger = "Spieler 2"
       } else if (
         G.scoreSpieler2 > G.scoreSpieler1 &&
         G.scoreSpieler2 > G.scoreSpieler0
       ) {
         return "2"
+        G.sieger = "Spieler 3"
       } else {
         return { draw: true }
+        G.sieger = "niemand"
       }
     }
   },

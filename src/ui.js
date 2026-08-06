@@ -539,7 +539,11 @@ export function draw(
   ctx.fillText("Score Spieler 2:    " + state.G.scoreSpieler1, 3800, 200)
   ctx.fillText("Score Spieler 3:    " + state.G.scoreSpieler2, 3800, 300)
 
-  if (state.G.) {
-
+  if (state.G.spielerbeendet == true) {
+    ctx.fillStyle = "white"
+    ctx.fillRect(0, 0, canvas.width, canvas.height)
+    ctx.fillStyle = "black"
+    ctx.font = "500px oldstandard"
+    ctx.fillText("Sieger:      " + state.G.sieger)
   }
 }
