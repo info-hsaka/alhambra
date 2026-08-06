@@ -387,7 +387,7 @@ export const Game = {
               // alle gleich
               G.scoreSpieler0 = G.scoreSpieler0 + (i + 1) / 3
               G.scoreSpieler1 = G.scoreSpieler1 + (i + 1) / 3
-              G.scoreSpieler1 = G.scoreSpieler1 + (i + 1) / 3
+              G.scoreSpieler2 = G.scoreSpieler2 + (i + 1) / 3
             } else if (G.farbigeHäuser1[i] == G.farbigeHäuser0[i]) {
               G.scoreSpieler0 = G.scoreSpieler0 + (i + 1) / 2
               G.scoreSpieler1 = G.scoreSpieler1 + (i + 1) / 2
