@@ -510,7 +510,7 @@ export const Game = {
   disableUndo: true,
 
   endIf: ({ G, ctx, random }) => {
-    if (G.hausstapel.length == 0) {
+    if (G.geldstapel.length == 0) {
       G.spielbeendet = true
       if (
         G.scoreSpieler0 > G.scoreSpieler1 &&
