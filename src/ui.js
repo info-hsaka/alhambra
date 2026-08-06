@@ -524,4 +524,6 @@ export function draw(
   ctx.fillRect(1650, 1500, 150, 150)
   ctx.fillStyle = "blue"
   ctx.fillRect(2650, 1500, 150, 150)
+
+  ctx.fillText("Score Spieler 0:    " + state.G.scoreSpieler0)
 }

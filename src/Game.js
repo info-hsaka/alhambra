@@ -332,8 +332,6 @@ export const Game = {
               G.farbigeHäuser0[i] > G.farbigeHäuser2[i]
             ) {
               G.scoreSpieler0 = G.scoreSpieler0 + (i + 1)
-
-
             } else if (
               G.farbigeHäuser1[i] > G.farbigeHäuser0[i] &&
               G.farbigeHäuser1[i] > G.farbigeHäuser2[i]
@@ -344,6 +342,14 @@ export const Game = {
               G.farbigeHäuser2[i] > G.farbigeHäuser1[i]
             ) {
               G.scoreSpieler0 = G.scoreSpieler0 + (i + 1)
+            } else if (
+              G.farbigeHäuser1[i] == G.farbigeHäuser0[i] &&
+              G.farbigeHäuser1[i] == G.farbigeHäuser2[i]
+            ) {
+              // alle gleich
+              G.scoreSpieler0 = G.scoreSpieler0 + (i + 1) / 3
+              G.scoreSpieler1 = G.scoreSpieler1 + (i + 1) / 3
+              G.scoreSpieler1 = G.scoreSpieler1 + (i + 1) / 3
             } else if (G.farbigeHäuser1[i] == G.farbigeHäuser0[i]) {
               G.scoreSpieler0 = G.scoreSpieler0 + (i + 1) / 2
               G.scoreSpieler1 = G.scoreSpieler1 + (i + 1) / 2
@@ -356,7 +362,7 @@ export const Game = {
             } else {
               G.scoreSpieler2 = G.scoreSpieler2 + (i + 1) / 3
               G.scoreSpieler0 = G.scoreSpieler0 + (i + 1) / 3
-               G.scoreSpieler1 = G.scoreSpieler1 + (i + 1) / 3
+              G.scoreSpieler1 = G.scoreSpieler1 + (i + 1) / 3
             }
           }
         }
@@ -376,70 +382,77 @@ export const Game = {
               }
             }
           }
-        }
 
-        function meisteHäuser(farbe) {
+          /*function meisteHäuser(farbe) {
           let häuserAnzahl0 = G.farbigeHäuser[0]
           let häuserAnzahl1 = G.farbigeHäuser[1]
           let häuserAnzahl2 = G.farbigeHäuser[2]
           let reihenfolgeHäuser = [[][][]]
           reihenfolgeHäuser[0].push()
           //[[Spieler mit den meisten Häusern], [ Die mit den zweitmeisten], [ Die mit den drittmeisten]]
-        }
-        if (
-              G.farbigeHäuser0[i] > G.farbigeHäuser1[i] &&
-              G.farbigeHäuser0[i] > G.farbigeHäuser2[i]
-            ) {
-              G.scoreSpieler0 = G.scoreSpieler0 + (i + 8)
-              if (G.farbigeHäuser1[i] > G.farbigeHäuser2[i]) {
+        }*/
+          if (
+            //Spieler0 am meisten
+            G.farbigeHäuser0[i] > G.farbigeHäuser1[i] &&
+            G.farbigeHäuser0[i] > G.farbigeHäuser2[i]
+          ) {
+            G.scoreSpieler0 = G.scoreSpieler0 + (i + 8)
+            if (G.farbigeHäuser1[i] > G.farbigeHäuser2[i]) {
               G.scoreSpieler1 = G.scoreSpieler1 + (i + 1)
-
-              } else if (G.farbigeHäuser2[i] > G.farbigeHäuser1[i]) {
-                 G.scoreSpieler2 = G.scoreSpieler2 + (i + 1)
-              } else {
-                G.scoreSpieler1 = G.scoreSpieler1 + (i + 1)/2
-                G.scoreSpieler2 = G.scoreSpieler2 + (i + 1)/2
-              }
-
-            } else if (
-              G.farbigeHäuser1[i] > G.farbigeHäuser0[i] &&
-              G.farbigeHäuser1[i] > G.farbigeHäuser2[i]
-            ) {
-              G.scoreSpieler0 = G.scoreSpieler0 + (i + 8)
-
-              if (G.farbigeHäuser0[i] > G.farbigeHäuser2[i]) {
-              G.scoreSpieler0 = G.scoreSpieler0 + (i + 1)
-
-              } else if (G.farbigeHäuser2[i] > G.farbigeHäuser0[i]) {
-                 G.scoreSpieler2 = G.scoreSpieler2 + (i + 1)
-              } else {
-                G.scoreSpieler0 = G.scoreSpieler0 + (i + 1)/2
-                G.scoreSpieler2 = G.scoreSpieler2 + (i + 1)/2
-              }
-            } else if (
-              G.farbigeHäuser2[i] > G.farbigeHäuser0[i] &&
-              G.farbigeHäuser2[i] > G.farbigeHäuser1[i]
-            ) {
-              G.scoreSpieler0 = G.scoreSpieler0 + (i + 8)
-              if (G.farbigeHäuser1[i] > G.farbigeHäuser0[i]) {
-              G.scoreSpieler1 = G.scoreSpieler1 + (i + 1)
-
-              } else if (G.farbigeHäuser0[i] > G.farbigeHäuser1[i]) {
-                 G.scoreSpieler2 = G.scoreSpieler2 + (i + 1)
-              } else {
-                G.scoreSpieler1 = G.scoreSpieler1 + (i + 1)/2
-                G.scoreSpieler0 = G.scoreSpieler0 + (i + 1)/2
-              }
-            } else if (G.farbigeHäuser1[i] == G.farbigeHäuser0[i]) {
-              G.scoreSpieler0 = G.scoreSpieler0 + (i + 8) / 2
-              G.scoreSpieler1 = G.scoreSpieler1 + (i + 8) / 2
-            } else if (G.farbigeHäuser1[i] == G.farbigeHäuser2[i]) {
-              G.scoreSpieler2 = G.scoreSpieler2 + (i + 8) / 2
-              G.scoreSpieler1 = G.scoreSpieler1 + (i + 8) / 2
-            } else if (G.farbigeHäuser0[i] == G.farbigeHäuser2[i]) {
-              G.scoreSpieler2 = G.scoreSpieler2 + (i + 8) / 2
-              G.scoreSpieler0 = G.scoreSpieler0 + (i + 8) / 2
+            } else if (G.farbigeHäuser2[i] > G.farbigeHäuser1[i]) {
+              G.scoreSpieler2 = G.scoreSpieler2 + (i + 1)
+            } else {
+              G.scoreSpieler1 = G.scoreSpieler1 + (i + 1) / 2
+              G.scoreSpieler2 = G.scoreSpieler2 + (i + 1) / 2
             }
+          } else if (
+            //Spieler1 am meisten
+            G.farbigeHäuser1[i] > G.farbigeHäuser0[i] &&
+            G.farbigeHäuser1[i] > G.farbigeHäuser2[i]
+          ) {
+            G.scoreSpieler0 = G.scoreSpieler0 + (i + 8)
+
+            if (G.farbigeHäuser0[i] > G.farbigeHäuser2[i]) {
+              G.scoreSpieler0 = G.scoreSpieler0 + (i + 1)
+            } else if (G.farbigeHäuser2[i] > G.farbigeHäuser0[i]) {
+              G.scoreSpieler2 = G.scoreSpieler2 + (i + 1)
+            } else {
+              G.scoreSpieler0 = G.scoreSpieler0 + (i + 1) / 2
+              G.scoreSpieler2 = G.scoreSpieler2 + (i + 1) / 2
+            }
+          } else if (
+            //Spieler2 am meisten
+            G.farbigeHäuser2[i] > G.farbigeHäuser0[i] &&
+            G.farbigeHäuser2[i] > G.farbigeHäuser1[i]
+          ) {
+            G.scoreSpieler0 = G.scoreSpieler0 + (i + 8)
+            if (G.farbigeHäuser1[i] > G.farbigeHäuser0[i]) {
+              G.scoreSpieler1 = G.scoreSpieler1 + (i + 1)
+            } else if (G.farbigeHäuser0[i] > G.farbigeHäuser1[i]) {
+              G.scoreSpieler0 = G.scoreSpieler0 + (i + 1)
+            } else {
+              G.scoreSpieler1 = G.scoreSpieler1 + (i + 1) / 2
+              G.scoreSpieler0 = G.scoreSpieler0 + (i + 1) / 2
+            }
+          } else if (
+            G.farbigeHäuser1[i] == G.farbigeHäuser0[i] &&
+            G.farbigeHäuser1[i] == G.farbigeHäuser2[i]
+          ) {
+            // alle gleich
+            G.scoreSpieler0 = G.scoreSpieler0 + (i + 9) / 3
+            G.scoreSpieler1 = G.scoreSpieler1 + (i + 9) / 3
+            G.scoreSpieler1 = G.scoreSpieler1 + (i + 9) / 3
+          } else if (G.farbigeHäuser1[i] == G.farbigeHäuser0[i]) {
+            G.scoreSpieler0 = G.scoreSpieler0 + (i + 9) / 2
+            G.scoreSpieler1 = G.scoreSpieler1 + (i + 9) / 2
+          } else if (G.farbigeHäuser1[i] == G.farbigeHäuser2[i]) {
+            G.scoreSpieler2 = G.scoreSpieler2 + (i + 9) / 2
+            G.scoreSpieler1 = G.scoreSpieler1 + (i + 9) / 2
+          } else if (G.farbigeHäuser0[i] == G.farbigeHäuser2[i]) {
+            G.scoreSpieler2 = G.scoreSpieler2 + (i + 9) / 2
+            G.scoreSpieler0 = G.scoreSpieler0 + (i + 9) / 2
+          }
+        }
       }
       for (let i = 0; i < 4; i++) {
         if (G.hausmarkt[i].length == 0) {
