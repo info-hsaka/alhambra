@@ -538,4 +538,8 @@ export function draw(
   ctx.fillText("Score Spieler 1:    " + state.G.scoreSpieler0, 3800, 100)
   ctx.fillText("Score Spieler 2:    " + state.G.scoreSpieler1, 3800, 200)
   ctx.fillText("Score Spieler 3:    " + state.G.scoreSpieler2, 3800, 300)
+
+  if (state.G.) {
+
+  }
 }

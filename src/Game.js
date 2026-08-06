@@ -196,6 +196,8 @@ export const Game = {
 
     let karteAusgesucht = []
 
+    let spielbeendet = false
+
     return {
       score: score,
       geldstapel: geldstapel,
@@ -507,6 +509,7 @@ export const Game = {
 
   endIf: ({ G, ctx, random }) => {
     if (G.hausstapel.length == 0) {
+      G.spielbeendet = true
       if (
         G.scoreSpieler0 > G.scoreSpieler1 &&
         G.scoreSpieler0 > G.scoreSpieler2
