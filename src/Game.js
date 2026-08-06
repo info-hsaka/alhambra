@@ -188,6 +188,7 @@ export const Game = {
     let farbigeHäuser0 = [0, 0, 0, 0, 0, 0]
     let farbigeHäuser1 = [0, 0, 0, 0, 0, 0]
     let farbigeHäuser2 = [0, 0, 0, 0, 0, 0]
+    let farbigeHäuser = [farbigeHäuser0, farbigeHäuser1, farbigeHäuser2]
 
     let scoreSpieler0 = 0
     let scoreSpieler1 = 0
@@ -218,6 +219,7 @@ export const Game = {
       scoreSpieler0: scoreSpieler0,
       scoreSpieler1: scoreSpieler1,
       scoreSpieler2: scoreSpieler2,
+      farbigeHäuser: farbigeHäuser,
     }
   },
 
@@ -326,17 +328,29 @@ export const Game = {
           }
           for (let i = 0; i < 6; i++) {
             if (
-              G.farbigeHäuser0[0].length < spielerhände[1].length &&
-              spielerhände[0].length < spielerhände[2].length
+              G.farbigeHäuser0[i] > G.farbigeHäuser1[i] &&
+              G.farbigeHäuser0[i] > G.farbigeHäuser2[i]
             ) {
-              spielerReihenfolge = [0, 1, 2]
+              G.scoreSpieler0 = G.scoreSpieler0 + (i + 1)
             } else if (
-              spielerhände[1].length < spielerhände[0].length &&
-              spielerhände[1].length < spielerhände[2].length
+              G.farbigeHäuser1[i] > G.farbigeHäuser0[i] &&
+              G.farbigeHäuser1[i] > G.farbigeHäuser2[i]
             ) {
-              spielerReihenfolge = [1, 2, 0]
-            } else {
-              spielerReihenfolge = [2, 0, 1]
+              G.scoreSpieler0 = G.scoreSpieler0 + (i + 1)
+            } else if (
+              G.farbigeHäuser2[i] > G.farbigeHäuser0[i] &&
+              G.farbigeHäuser2[i] > G.farbigeHäuser1[i]
+            ) {
+              G.scoreSpieler0 = G.scoreSpieler0 + (i + 1)
+            } else if (G.farbigeHäuser1[i] == G.farbigeHäuser0[i]) {
+              G.scoreSpieler0 = G.scoreSpieler0 + (i + 1) / 2
+              G.scoreSpieler1 = G.scoreSpieler1 + (i + 1) / 2
+            } else if (G.farbigeHäuser1[i] == G.farbigeHäuser2[i]) {
+              G.scoreSpieler2 = G.scoreSpieler2 + (i + 1) / 2
+              G.scoreSpieler1 = G.scoreSpieler1 + (i + 1) / 2
+            } else if (G.farbigeHäuser0[i] == G.farbigeHäuser2[i]) {
+              G.scoreSpieler2 = G.scoreSpieler2 + (i + 1) / 2
+              G.scoreSpieler0 = G.scoreSpieler0 + (i + 1) / 2
             }
           }
         }
@@ -356,6 +370,12 @@ export const Game = {
               }
             }
           }
+        }
+
+        function meisteHäuser(farbigeHäuser, farbe) {
+          let häuserAnzahl0 = farbigeHäuser0
+          le
+          //[[Spieler mit den meisten Häusern], [ Die mit den zweitmeisten], [ Die mit den drittmeisten]]
         }
       }
       for (let i = 0; i < 4; i++) {
