@@ -273,15 +273,16 @@ export const Game = {
         G.geldbezahlt = G.geldbezahlt + G.spielerhände[playerID][i].zahl
         G.zwischenspeichergeld.push(i)
       }
-
-      if (G.geldbezahlt >= G.hausmarkt[G.geklicktesHaus][0].zahl) {
-        for (const i of G.zwischenspeichergeld) {
-          G.ablegestapel.push(G.spielerhände[playerID][i])
-          G.spielerhände[playerID].splice(i, 1)
+      if (G.geklicktesHaus < 4) {
+        if (G.geldbezahlt >= G.hausmarkt[G.geklicktesHaus][0].zahl) {
+          for (const i of G.zwischenspeichergeld) {
+            G.ablegestapel.push(G.spielerhände[playerID][i])
+            G.spielerhände[playerID].splice(i, 1)
+          }
+          G.hausspeicher.push(G.hausmarkt[G.geklicktesHaus].pop())
+          G.geldbezahlt = 0
+          G.geklicktesHaus = 4
         }
-        G.hausspeicher.push(G.hausmarkt[G.geklicktesHaus].pop())
-        G.geldbezahlt = 0
-        G.geklicktesHaus = 4
       }
     },
     drawCard(ctx) {},
@@ -308,8 +309,8 @@ export const Game = {
                 let gebäudeFarbe = zeile[spalte][0].farbe
                 for (const farben of G.hausfarben) {
                   if (gebäudeFarbe == farben) {
-                    G.farbigeHäuser0[hausfarben.indexOf(farben)] =
-                      G.farbigeHäuser0[hausfarben.indexOf(farben)] + 1
+                    G.farbigeHäuser0[G.hausfarben.indexOf(farben)] =
+                      G.farbigeHäuser0[G.hausfarben.indexOf(farben)] + 1
                   }
                 }
               }
