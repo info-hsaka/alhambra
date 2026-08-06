@@ -524,6 +524,9 @@ export function draw(
   ctx.fillRect(1650, 1500, 150, 150)
   ctx.fillStyle = "blue"
   ctx.fillRect(2650, 1500, 150, 150)
-
-  ctx.fillText("Score Spieler 0:    " + state.G.scoreSpieler0)
+  ctx.textAlign = "right"
+  ctx.font = "80px oldstandard"
+  ctx.fillText("Score Spieler 0:    " + state.G.scoreSpieler0, 1200, 100)
+  ctx.fillText("Score Spieler 0:    " + state.G.scoreSpieler0, 1200, 200)
+  ctx.fillText("Score Spieler 0:    " + state.G.scoreSpieler0, 1200, 300)
 }
