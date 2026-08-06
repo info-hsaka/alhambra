@@ -528,7 +528,7 @@ export function draw(
   ctx.fillStyle = "black"
   ctx.textAlign = "right"
   ctx.font = "70px oldstandard"
-  ctx.fillText("Score Spieler 1:    " + state.G.scoreSpieler0, 4000, 100)
-  ctx.fillText("Score Spieler 2:    " + state.G.scoreSpieler1, 4000, 200)
-  ctx.fillText("Score Spieler 3:    " + state.G.scoreSpieler2, 4000, 300)
+  ctx.fillText("Score Spieler 1:    " + state.G.scoreSpieler0, 3800, 100)
+  ctx.fillText("Score Spieler 2:    " + state.G.scoreSpieler1, 3800, 200)
+  ctx.fillText("Score Spieler 3:    " + state.G.scoreSpieler2, 3800, 300)
 }
